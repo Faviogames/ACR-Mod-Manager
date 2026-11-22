@@ -1,0 +1,44 @@
+ACR MOD MANAGER
+
+ENGLISH
+Run ACR-Mod-Manager-Setup.exe. It installs for your Windows user and creates a
+Start menu shortcut. Run the newer installer with the app closed to update it;
+your game path, language and manager data stay separate from app versions.
+
+1. Select your Assetto Corsa Rally folder on first launch.
+2. Put the complete .pak/.utoc/.ucas set of each supported stage in the mods folder.
+3. Click Scan when you want to check the folder and prepare its game menu.
+4. Enable/Disable applies immediately, with ACR closed. Disabled stages are kept.
+5. Unknown packages are marked Not supported; table conflicts identify the package.
+
+Your records online! opens https://acrsplits.online/.
+Submit a mod shows the contact details for faviogames on Discord and a request
+template. No files or messages are sent automatically.
+Updates turns red only for a newer stable release with a downloadable installer.
+It opens the official GitHub release page; updates are not installed silently.
+Repository: https://github.com/Faviogames/ACR-Mod-Manager
+
+Windows x64 and Microsoft Edge WebView2 Runtime are required. The exporter and
+WRC Generations are not required. The package contains no level packs or private
+profiles. Restore backup is available with ACR closed; see Settings for locations.
+
+ESPAÑOL
+Ejecuta ACR-Mod-Manager-Setup.exe. Instala para tu usuario y crea un acceso en
+Inicio. Para actualizar, cierra la app y ejecuta el nuevo instalador; conserva
+la configuración y los datos del gestor fuera de las carpetas de versiones.
+
+Elige la carpeta de ACR, copia cada conjunto completo .pak/.utoc/.ucas y pulsa
+Escanear cuando quieras revisar los tramos. Activar/desactivar se aplica al
+momento, con el juego cerrado; los tramos desactivados se conservan.
+Los mods desconocidos se marcan No soportado. Los conflictos indican el paquete.
+
+¡Tus récords en línea! abre ACR Splits. Enviar un mod muestra el contacto Discord
+faviogames y una plantilla; no envía archivos ni mensajes automáticamente.
+Actualizaciones se ilumina en rojo cuando hay una nueva versión estable con
+instalador descargable y abre su página oficial de GitHub.
+Cambia English/Español en la barra superior; la elección queda guardada.
+
+The first extraction needs Internet: retoc fetches its compression library and
+checks its SHA256. That library is not redistributed in this installer.
+La primera extracción necesita Internet: retoc obtiene su biblioteca de
+compresión y verifica su SHA256; el instalador no la redistribuye.

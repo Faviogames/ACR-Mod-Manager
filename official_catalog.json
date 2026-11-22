@@ -1,0 +1,1293 @@
+{
+  "schema": "stage-exporter-official/1",
+  "stages": {
+    "WrcgBeES1": {
+      "id": "favio_be_es1",
+      "slug": "be_es1",
+      "name": "ZonneBeke",
+      "country": "Bélgica",
+      "level": "/Game/Levels/WrcgBeES1",
+      "variant": "WrcgBeES1Full"
+    },
+    "WrcgBeSS1": {
+      "id": "favio_be_ss1",
+      "slug": "be_ss1",
+      "name": "Dikkebus",
+      "country": "Bélgica",
+      "level": "/Game/Levels/WrcgBeSS1",
+      "variant": "WrcgBeSS1Full"
+    },
+    "WrcgBeSS2": {
+      "id": "favio_be_ss2",
+      "slug": "be_ss2",
+      "name": "Kemmelberg",
+      "country": "Bélgica",
+      "level": "/Game/Levels/WrcgBeSS2",
+      "variant": "WrcgBeSS2Full"
+    },
+    "WrcgEsSS1": {
+      "id": "favio_es_ss1",
+      "slug": "es_ss1",
+      "name": "Riudecanyes",
+      "country": "España",
+      "level": "/Game/Levels/WrcgEsSS1",
+      "variant": "WrcgEsSS1Full",
+      "preview": "art/WrcgEsSS1.png"
+    },
+    "WrcgEsSS1R": {
+      "id": "favio_es_ss1r",
+      "slug": "es_ss1r",
+      "name": "Riudecanyes reverse",
+      "country": "España",
+      "level": "/Game/Levels/WrcgEsSS1R",
+      "variant": "WrcgEsSS1RFull",
+      "preview": "art/WrcgEsSS1R.png"
+    },
+    "WrcgEsSS4": {
+      "id": "favio_es_ss4",
+      "slug": "es_ss4",
+      "name": "Savallà",
+      "country": "España",
+      "level": "/Game/Levels/WrcgEsSS4",
+      "variant": "WrcgEsSS4Full",
+      "preview": "art/WrcgEsSS4.png"
+    },
+    "WrcgEsSS4R": {
+      "id": "favio_es_ss4r",
+      "slug": "es_ss4r",
+      "name": "Savallà reverse",
+      "country": "España",
+      "level": "/Game/Levels/WrcgEsSS4R",
+      "variant": "WrcgEsSS4RFull",
+      "preview": "art/WrcgEsSS4R.png"
+    },
+    "WrcgFrSS1": {
+      "id": "favio_fr_ss1",
+      "slug": "fr_ss1",
+      "name": "Pietrosella",
+      "country": "",
+      "level": "/Game/Levels/WrcgFrSS1",
+      "variant": "WrcgFrSS1Full"
+    },
+    "WrcgFrSS1R": {
+      "id": "favio_fr_ss1r",
+      "slug": "fr_ss1r",
+      "name": "Pietrosella reverse",
+      "country": "",
+      "level": "/Game/Levels/WrcgFrSS1R",
+      "variant": "WrcgFrSS1RFull"
+    },
+    "WrcgGrSS3": {
+      "id": "favio_gr_ss3",
+      "slug": "gr_ss3",
+      "name": "Paleohori",
+      "country": "Grecia",
+      "level": "/Game/Levels/WrcgGrSS3",
+      "variant": "WrcgGrSS3Full"
+    },
+    "WrcgItSS1": {
+      "id": "favio_it_ss1",
+      "slug": "it_ss1",
+      "name": "Ronde",
+      "country": "Italia",
+      "level": "/Game/Levels/WrcgItSS1",
+      "variant": "WrcgItSS1Full"
+    },
+    "WrcgItSS1R": {
+      "id": "favio_it_ss1r",
+      "slug": "it_ss1r",
+      "name": "Ronde reverse",
+      "country": "Italia",
+      "level": "/Game/Levels/WrcgItSS1R",
+      "variant": "WrcgItSS1RFull"
+    },
+    "WrcgKeES1": {
+      "id": "favio_ke_es1",
+      "slug": "ke_es1",
+      "name": "Ntulele",
+      "country": "Kenia",
+      "level": "/Game/Levels/WrcgKeES1",
+      "variant": "WrcgKeES1Full"
+    },
+    "WrcgKeES1R": {
+      "id": "favio_ke_es1r",
+      "slug": "ke_es1r",
+      "name": "Ntulele reverse",
+      "country": "Kenia",
+      "level": "/Game/Levels/WrcgKeES1R",
+      "variant": "WrcgKeES1RFull"
+    },
+    "WrcgKeSS1": {
+      "id": "favio_ke_ss1",
+      "slug": "ke_ss1",
+      "name": "Ngema",
+      "country": "Kenia",
+      "level": "/Game/Levels/WrcgKeSS1",
+      "variant": "WrcgKeSS1Full",
+      "preview": "art/WrcgKeSS1.png"
+    },
+    "WrcgKeSS1R": {
+      "id": "favio_ke_ss1r",
+      "slug": "ke_ss1r",
+      "name": "Ngema reverse",
+      "country": "Kenia",
+      "level": "/Game/Levels/WrcgKeSS1R",
+      "variant": "WrcgKeSS1RFull",
+      "preview": "art/WrcgKeSS1R.png"
+    },
+    "WrcgKeSS2": {
+      "id": "favio_ke_ss2",
+      "slug": "ke_ss2",
+      "name": "Seyabei",
+      "country": "Kenia",
+      "level": "/Game/Levels/WrcgKeSS2",
+      "variant": "WrcgKeSS2Full",
+      "preview": "art/WrcgKeSS2.png"
+    },
+    "WrcgKeSS2R": {
+      "id": "favio_ke_ss2r",
+      "slug": "ke_ss2r",
+      "name": "Seyabei reverse",
+      "country": "Kenia",
+      "level": "/Game/Levels/WrcgKeSS2R",
+      "variant": "WrcgKeSS2RFull",
+      "preview": "art/WrcgKeSS2R.png"
+    },
+    "WrcgMxES1": {
+      "id": "favio_mx_es1",
+      "slug": "mx_es1",
+      "name": "El Chocolate",
+      "country": "México",
+      "level": "/Game/Levels/WrcgMxES1",
+      "variant": "WrcgMxES1Full"
+    },
+    "WrcgMxSS1": {
+      "id": "favio_mx_ss1",
+      "slug": "mx_ss1",
+      "name": "Media Luna",
+      "country": "México",
+      "level": "/Game/Levels/WrcgMxSS1",
+      "variant": "WrcgMxSS1Full"
+    },
+    "WrcgMxSS2": {
+      "id": "favio_mx_ss2",
+      "slug": "mx_ss2",
+      "name": "Ibarrilla",
+      "country": "México",
+      "level": "/Game/Levels/WrcgMxSS2",
+      "variant": "WrcgMxSS2Full"
+    },
+    "WrcgDePanzerplatte": {
+      "id": "favio_panzerplatte",
+      "slug": "panzerplatte",
+      "name": "Arena Panzerplatte",
+      "country": "",
+      "level": "/Game/Levels/WrcgDePanzerplatte",
+      "variant": "WrcgDePanzerplatteFull"
+    },
+    "WrcgPtSS4": {
+      "id": "favio_pt_ss4",
+      "slug": "pt_ss4",
+      "name": "Arganil",
+      "country": "Portugal",
+      "level": "/Game/Levels/WrcgPtSS4",
+      "variant": "WrcgPtSS4Full"
+    },
+    "WrcgSeSS3": {
+      "id": "favio_se_ss3",
+      "slug": "se_ss3",
+      "name": "Sävar",
+      "country": "Suecia",
+      "level": "/Game/Levels/WrcgSeSS3",
+      "variant": "WrcgSeSS3Full"
+    },
+    "WrcgSeSS4": {
+      "id": "favio_se_ss4",
+      "slug": "se_ss4",
+      "name": "Brattby",
+      "country": "Suecia",
+      "level": "/Game/Levels/WrcgSeSS4",
+      "variant": "WrcgSeSS4Full"
+    },
+    "WrcgKeKEShort01": {
+      "id": "favio_ke_short_01",
+      "slug": "ke_short_01",
+      "name": "Kenya shakedown",
+      "country": "Kenya",
+      "level": "/Game/Levels/WrcgKeKEShort01",
+      "variant": "WrcgKeKEShort01Full"
+    },
+    "WrcgMcSS1": {
+      "id": "favio_mc_ss1",
+      "slug": "mc_ss1",
+      "name": "Agnières-en-Devoluy",
+      "country": "Monaco",
+      "level": "/Game/Levels/WrcgMcSS1",
+      "variant": "WrcgMcSS1Full"
+    },
+    "WrcgMcSS1R": {
+      "id": "favio_mc_ss1r",
+      "slug": "mc_ss1r",
+      "name": "Agnières-en-Devoluy reverse",
+      "country": "Monaco",
+      "level": "/Game/Levels/WrcgMcSS1R",
+      "variant": "WrcgMcSS1RFull"
+    },
+    "WrcgMcSS2": {
+      "id": "favio_mc_ss2",
+      "slug": "mc_ss2",
+      "name": "Luceram",
+      "country": "Monaco",
+      "level": "/Game/Levels/WrcgMcSS2",
+      "variant": "WrcgMcSS2Full"
+    },
+    "WrcgMcSS2R": {
+      "id": "favio_mc_ss2r",
+      "slug": "mc_ss2r",
+      "name": "Luceram reverse",
+      "country": "Monaco",
+      "level": "/Game/Levels/WrcgMcSS2R",
+      "variant": "WrcgMcSS2RFull"
+    },
+    "WrcgMcSS3": {
+      "id": "favio_mc_ss3",
+      "slug": "mc_ss3",
+      "name": "Col de Braus",
+      "country": "Monaco",
+      "level": "/Game/Levels/WrcgMcSS3",
+      "variant": "WrcgMcSS3Full"
+    },
+    "WrcgMcSS3R": {
+      "id": "favio_mc_ss3r",
+      "slug": "mc_ss3r",
+      "name": "Col de Braus reverse",
+      "country": "Monaco",
+      "level": "/Game/Levels/WrcgMcSS3R",
+      "variant": "WrcgMcSS3RFull"
+    },
+    "WrcgMcES1": {
+      "id": "favio_mc_es1",
+      "slug": "mc_es1",
+      "name": "La Bollène-Vésubie",
+      "country": "Monaco",
+      "level": "/Game/Levels/WrcgMcES1",
+      "variant": "WrcgMcES1Full"
+    },
+    "WrcgMcES1R": {
+      "id": "favio_mc_es1r",
+      "slug": "mc_es1r",
+      "name": "La Bollène-Vésubie reverse",
+      "country": "Monaco",
+      "level": "/Game/Levels/WrcgMcES1R",
+      "variant": "WrcgMcES1RFull"
+    },
+    "WrcgSeSS3R": {
+      "id": "favio_se_ss3r",
+      "slug": "se_ss3r",
+      "name": "Sävar reverse",
+      "country": "Sweden",
+      "level": "/Game/Levels/WrcgSeSS3R",
+      "variant": "WrcgSeSS3RFull"
+    },
+    "WrcgSeSS4R": {
+      "id": "favio_se_ss4r",
+      "slug": "se_ss4r",
+      "name": "Brattby reverse",
+      "country": "Sweden",
+      "level": "/Game/Levels/WrcgSeSS4R",
+      "variant": "WrcgSeSS4RFull"
+    },
+    "WrcgSeSS5": {
+      "id": "favio_se_ss5",
+      "slug": "se_ss5",
+      "name": "Kroksjö",
+      "country": "Sweden",
+      "level": "/Game/Levels/WrcgSeSS5",
+      "variant": "WrcgSeSS5Full"
+    },
+    "WrcgSeSS5R": {
+      "id": "favio_se_ss5r",
+      "slug": "se_ss5r",
+      "name": "Kroksjö reverse",
+      "country": "Sweden",
+      "level": "/Game/Levels/WrcgSeSS5R",
+      "variant": "WrcgSeSS5RFull"
+    },
+    "WrcgSeES3": {
+      "id": "favio_se_es3",
+      "slug": "se_es3",
+      "name": "Örträsk",
+      "country": "Sweden",
+      "level": "/Game/Levels/WrcgSeES3",
+      "variant": "WrcgSeES3Full"
+    },
+    "WrcgSeES3R": {
+      "id": "favio_se_es3r",
+      "slug": "se_es3r",
+      "name": "Örträsk reverse",
+      "country": "Sweden",
+      "level": "/Game/Levels/WrcgSeES3R",
+      "variant": "WrcgSeES3RFull"
+    },
+    "WrcgHrSS1": {
+      "id": "favio_hr_ss1",
+      "slug": "hr_ss1",
+      "name": "Grdanjci",
+      "country": "Croatia",
+      "level": "/Game/Levels/WrcgHrSS1",
+      "variant": "WrcgHrSS1Full"
+    },
+    "WrcgHrSS1R": {
+      "id": "favio_hr_ss1r",
+      "slug": "hr_ss1r",
+      "name": "Grdanjci reverse",
+      "country": "Croatia",
+      "level": "/Game/Levels/WrcgHrSS1R",
+      "variant": "WrcgHrSS1RFull"
+    },
+    "WrcgHrSS2": {
+      "id": "favio_hr_ss2",
+      "slug": "hr_ss2",
+      "name": "Jaškovo",
+      "country": "Croatia",
+      "level": "/Game/Levels/WrcgHrSS2",
+      "variant": "WrcgHrSS2Full"
+    },
+    "WrcgHrSS2R": {
+      "id": "favio_hr_ss2r",
+      "slug": "hr_ss2r",
+      "name": "Jaškovo reverse",
+      "country": "Croatia",
+      "level": "/Game/Levels/WrcgHrSS2R",
+      "variant": "WrcgHrSS2RFull"
+    },
+    "WrcgHrSS3": {
+      "id": "favio_hr_ss3",
+      "slug": "hr_ss3",
+      "name": "Rude",
+      "country": "Croatia",
+      "level": "/Game/Levels/WrcgHrSS3",
+      "variant": "WrcgHrSS3Full"
+    },
+    "WrcgHrSS3R": {
+      "id": "favio_hr_ss3r",
+      "slug": "hr_ss3r",
+      "name": "Rude reverse",
+      "country": "Croatia",
+      "level": "/Game/Levels/WrcgHrSS3R",
+      "variant": "WrcgHrSS3RFull"
+    },
+    "WrcgHrES2": {
+      "id": "favio_hr_es2",
+      "slug": "hr_es2",
+      "name": "Kostanjevac",
+      "country": "Croatia",
+      "level": "/Game/Levels/WrcgHrES2",
+      "variant": "WrcgHrES2Full"
+    },
+    "WrcgHrES2R": {
+      "id": "favio_hr_es2r",
+      "slug": "hr_es2r",
+      "name": "Kostanjevac reverse",
+      "country": "Croatia",
+      "level": "/Game/Levels/WrcgHrES2R",
+      "variant": "WrcgHrES2RFull"
+    },
+    "WrcgPtSS3": {
+      "id": "favio_pt_ss3",
+      "slug": "pt_ss3",
+      "name": "Felgueiras",
+      "country": "Portugal",
+      "level": "/Game/Levels/WrcgPtSS3",
+      "variant": "WrcgPtSS3Full"
+    },
+    "WrcgPtSS3R": {
+      "id": "favio_pt_ss3r",
+      "slug": "pt_ss3r",
+      "name": "Felgueiras reverse",
+      "country": "Portugal",
+      "level": "/Game/Levels/WrcgPtSS3R",
+      "variant": "WrcgPtSS3RFull"
+    },
+    "WrcgPtSS4R": {
+      "id": "favio_pt_ss4r",
+      "slug": "pt_ss4r",
+      "name": "Arganil reverse",
+      "country": "Portugal",
+      "level": "/Game/Levels/WrcgPtSS4R",
+      "variant": "WrcgPtSS4RFull"
+    },
+    "WrcgPtES2": {
+      "id": "favio_pt_es2",
+      "slug": "pt_es2",
+      "name": "Cabeceiras de Basto",
+      "country": "Portugal",
+      "level": "/Game/Levels/WrcgPtES2",
+      "variant": "WrcgPtES2Full"
+    },
+    "WrcgPtES2R": {
+      "id": "favio_pt_es2r",
+      "slug": "pt_es2r",
+      "name": "Cabeceiras de Basto reverse",
+      "country": "Portugal",
+      "level": "/Game/Levels/WrcgPtES2R",
+      "variant": "WrcgPtES2RFull"
+    },
+    "WrcgPtLousada": {
+      "id": "favio_lousada",
+      "slug": "lousada",
+      "name": "Lousada",
+      "country": "Portugal",
+      "level": "/Game/Levels/WrcgPtLousada",
+      "variant": "WrcgPtLousadaFull"
+    },
+    "WrcgItSS2": {
+      "id": "favio_it_ss2",
+      "slug": "it_ss2",
+      "name": "Lerno",
+      "country": "Italy",
+      "level": "/Game/Levels/WrcgItSS2",
+      "variant": "WrcgItSS2Full"
+    },
+    "WrcgItSS2R": {
+      "id": "favio_it_ss2r",
+      "slug": "it_ss2r",
+      "name": "Lerno reverse",
+      "country": "Italy",
+      "level": "/Game/Levels/WrcgItSS2R",
+      "variant": "WrcgItSS2RFull"
+    },
+    "WrcgItES1": {
+      "id": "favio_it_es1",
+      "slug": "it_es1",
+      "name": "Monti di Ala",
+      "country": "Italy",
+      "level": "/Game/Levels/WrcgItES1",
+      "variant": "WrcgItES1Full"
+    },
+    "WrcgItES1R": {
+      "id": "favio_it_es1r",
+      "slug": "it_es1r",
+      "name": "Monti di Ala reverse",
+      "country": "Italy",
+      "level": "/Game/Levels/WrcgItES1R",
+      "variant": "WrcgItES1RFull"
+    },
+    "WrcgItIttiri": {
+      "id": "favio_ittiri",
+      "slug": "ittiri",
+      "name": "Ittiri Arena",
+      "country": "Italy",
+      "level": "/Game/Levels/WrcgItIttiri",
+      "variant": "WrcgItIttiriFull"
+    },
+    "WrcgKeKasarani": {
+      "id": "favio_kasarani",
+      "slug": "kasarani",
+      "name": "Kasarani",
+      "country": "Kenya",
+      "level": "/Game/Levels/WrcgKeKasarani",
+      "variant": "WrcgKeKasaraniFull"
+    },
+    "WrcgEeSS1": {
+      "id": "favio_ee_ss1",
+      "slug": "ee_ss1",
+      "name": "Elva",
+      "country": "Estonia",
+      "level": "/Game/Levels/WrcgEeSS1",
+      "variant": "WrcgEeSS1Full"
+    },
+    "WrcgEeSS1R": {
+      "id": "favio_ee_ss1r",
+      "slug": "ee_ss1r",
+      "name": "Elva reverse",
+      "country": "Estonia",
+      "level": "/Game/Levels/WrcgEeSS1R",
+      "variant": "WrcgEeSS1RFull"
+    },
+    "WrcgEeSS2": {
+      "id": "favio_ee_ss2",
+      "slug": "ee_ss2",
+      "name": "Otepää",
+      "country": "Estonia",
+      "level": "/Game/Levels/WrcgEeSS2",
+      "variant": "WrcgEeSS2Full"
+    },
+    "WrcgEeSS2R": {
+      "id": "favio_ee_ss2r",
+      "slug": "ee_ss2r",
+      "name": "Otepää reverse",
+      "country": "Estonia",
+      "level": "/Game/Levels/WrcgEeSS2R",
+      "variant": "WrcgEeSS2RFull"
+    },
+    "WrcgEeES1": {
+      "id": "favio_ee_es1",
+      "slug": "ee_es1",
+      "name": "Kanepi",
+      "country": "Estonia",
+      "level": "/Game/Levels/WrcgEeES1",
+      "variant": "WrcgEeES1Full"
+    },
+    "WrcgEeES1R": {
+      "id": "favio_ee_es1r",
+      "slug": "ee_es1r",
+      "name": "Kanepi reverse",
+      "country": "Estonia",
+      "level": "/Game/Levels/WrcgEeES1R",
+      "variant": "WrcgEeES1RFull"
+    },
+    "WrcgEeTartu": {
+      "id": "favio_tartu",
+      "slug": "tartu",
+      "name": "Tartu",
+      "country": "Estonia",
+      "level": "/Game/Levels/WrcgEeTartu",
+      "variant": "WrcgEeTartuFull"
+    },
+    "WrcgFiSS3": {
+      "id": "favio_fi_ss3",
+      "slug": "fi_ss3",
+      "name": "Arvaja",
+      "country": "Finland",
+      "level": "/Game/Levels/WrcgFiSS3",
+      "variant": "WrcgFiSS3Full"
+    },
+    "WrcgFiSS3R": {
+      "id": "favio_fi_ss3r",
+      "slug": "fi_ss3r",
+      "name": "Arvaja reverse",
+      "country": "Finland",
+      "level": "/Game/Levels/WrcgFiSS3R",
+      "variant": "WrcgFiSS3RFull"
+    },
+    "WrcgFiSS4": {
+      "id": "favio_fi_ss4",
+      "slug": "fi_ss4",
+      "name": "Pihlajakoski",
+      "country": "Finland",
+      "level": "/Game/Levels/WrcgFiSS4",
+      "variant": "WrcgFiSS4Full"
+    },
+    "WrcgFiSS4R": {
+      "id": "favio_fi_ss4r",
+      "slug": "fi_ss4r",
+      "name": "Pihlajakoski reverse",
+      "country": "Finland",
+      "level": "/Game/Levels/WrcgFiSS4R",
+      "variant": "WrcgFiSS4RFull"
+    },
+    "WrcgFiES2": {
+      "id": "favio_fi_es2",
+      "slug": "fi_es2",
+      "name": "Laukaa",
+      "country": "Finland",
+      "level": "/Game/Levels/WrcgFiES2",
+      "variant": "WrcgFiES2Full"
+    },
+    "WrcgFiES2R": {
+      "id": "favio_fi_es2r",
+      "slug": "fi_es2r",
+      "name": "Laukaa reverse",
+      "country": "Finland",
+      "level": "/Game/Levels/WrcgFiES2R",
+      "variant": "WrcgFiES2RFull"
+    },
+    "WrcgFiHarju": {
+      "id": "favio_harju",
+      "slug": "harju",
+      "name": "Harju",
+      "country": "Finland",
+      "level": "/Game/Levels/WrcgFiHarju",
+      "variant": "WrcgFiHarjuFull"
+    },
+    "WrcgBeSS1R": {
+      "id": "favio_be_ss1r",
+      "slug": "be_ss1r",
+      "name": "Dikkebus reverse",
+      "country": "Belgium",
+      "level": "/Game/Levels/WrcgBeSS1R",
+      "variant": "WrcgBeSS1RFull"
+    },
+    "WrcgBeSS2R": {
+      "id": "favio_be_ss2r",
+      "slug": "be_ss2r",
+      "name": "Kemmelberg reverse",
+      "country": "Belgium",
+      "level": "/Game/Levels/WrcgBeSS2R",
+      "variant": "WrcgBeSS2RFull"
+    },
+    "WrcgBeES1R": {
+      "id": "favio_be_es1r",
+      "slug": "be_es1r",
+      "name": "ZonneBeke reverse",
+      "country": "Belgium",
+      "level": "/Game/Levels/WrcgBeES1R",
+      "variant": "WrcgBeES1RFull"
+    },
+    "WrcgGrSS1": {
+      "id": "favio_gr_ss1",
+      "slug": "gr_ss1",
+      "name": "Psatha",
+      "country": "Greece",
+      "level": "/Game/Levels/WrcgGrSS1",
+      "variant": "WrcgGrSS1Full"
+    },
+    "WrcgGrSS1R": {
+      "id": "favio_gr_ss1r",
+      "slug": "gr_ss1r",
+      "name": "Psatha reverse",
+      "country": "Greece",
+      "level": "/Game/Levels/WrcgGrSS1R",
+      "variant": "WrcgGrSS1RFull"
+    },
+    "WrcgGrSS2": {
+      "id": "favio_gr_ss2",
+      "slug": "gr_ss2",
+      "name": "Amfissa",
+      "country": "Greece",
+      "level": "/Game/Levels/WrcgGrSS2",
+      "variant": "WrcgGrSS2Full"
+    },
+    "WrcgGrSS2R": {
+      "id": "favio_gr_ss2r",
+      "slug": "gr_ss2r",
+      "name": "Amfissa reverse",
+      "country": "Greece",
+      "level": "/Game/Levels/WrcgGrSS2R",
+      "variant": "WrcgGrSS2RFull"
+    },
+    "WrcgGrSS3R": {
+      "id": "favio_gr_ss3r",
+      "slug": "gr_ss3r",
+      "name": "Paleohori reverse",
+      "country": "Greece",
+      "level": "/Game/Levels/WrcgGrSS3R",
+      "variant": "WrcgGrSS3RFull"
+    },
+    "WrcgGrES1": {
+      "id": "favio_gr_es1",
+      "slug": "gr_es1",
+      "name": "Mendenitsa",
+      "country": "Greece",
+      "level": "/Game/Levels/WrcgGrES1",
+      "variant": "WrcgGrES1Full"
+    },
+    "WrcgGrES1R": {
+      "id": "favio_gr_es1r",
+      "slug": "gr_es1r",
+      "name": "Mendenitsa reverse",
+      "country": "Greece",
+      "level": "/Game/Levels/WrcgGrES1R",
+      "variant": "WrcgGrES1RFull"
+    },
+    "WrcgNzSS1": {
+      "id": "favio_nz_ss1",
+      "slug": "nz_ss1",
+      "name": "Te Hutewai",
+      "country": "NewZealand",
+      "level": "/Game/Levels/WrcgNzSS1",
+      "variant": "WrcgNzSS1Full"
+    },
+    "WrcgNzSS1R": {
+      "id": "favio_nz_ss1r",
+      "slug": "nz_ss1r",
+      "name": "Te Hutewai reverse",
+      "country": "NewZealand",
+      "level": "/Game/Levels/WrcgNzSS1R",
+      "variant": "WrcgNzSS1RFull"
+    },
+    "WrcgNzSS2": {
+      "id": "favio_nz_ss2",
+      "slug": "nz_ss2",
+      "name": "Batley",
+      "country": "NewZealand",
+      "level": "/Game/Levels/WrcgNzSS2",
+      "variant": "WrcgNzSS2Full"
+    },
+    "WrcgNzSS2R": {
+      "id": "favio_nz_ss2r",
+      "slug": "nz_ss2r",
+      "name": "Batley reverse",
+      "country": "NewZealand",
+      "level": "/Game/Levels/WrcgNzSS2R",
+      "variant": "WrcgNzSS2RFull"
+    },
+    "WrcgNzSS3": {
+      "id": "favio_nz_ss3",
+      "slug": "nz_ss3",
+      "name": "Brooks",
+      "country": "NewZealand",
+      "level": "/Game/Levels/WrcgNzSS3",
+      "variant": "WrcgNzSS3Full"
+    },
+    "WrcgNzSS3R": {
+      "id": "favio_nz_ss3r",
+      "slug": "nz_ss3r",
+      "name": "Brooks reverse",
+      "country": "NewZealand",
+      "level": "/Game/Levels/WrcgNzSS3R",
+      "variant": "WrcgNzSS3RFull"
+    },
+    "WrcgNzES2": {
+      "id": "favio_nz_es2",
+      "slug": "nz_es2",
+      "name": "Te Akau South",
+      "country": "NewZealand",
+      "level": "/Game/Levels/WrcgNzES2",
+      "variant": "WrcgNzES2Full"
+    },
+    "WrcgNzES2R": {
+      "id": "favio_nz_es2r",
+      "slug": "nz_es2r",
+      "name": "Te Akau South reverse",
+      "country": "NewZealand",
+      "level": "/Game/Levels/WrcgNzES2R",
+      "variant": "WrcgNzES2RFull"
+    },
+    "WrcgEsES2": {
+      "id": "favio_es2",
+      "slug": "es2",
+      "name": "Querol",
+      "country": "Spain",
+      "level": "/Game/Levels/WrcgEsES2",
+      "variant": "WrcgEsES2Full"
+    },
+    "WrcgEsES2R": {
+      "id": "favio_es2r",
+      "slug": "es2r",
+      "name": "Querol reverse",
+      "country": "Spain",
+      "level": "/Game/Levels/WrcgEsES2R",
+      "variant": "WrcgEsES2RFull"
+    },
+    "WrcgJpSS1": {
+      "id": "favio_jp_ss1",
+      "slug": "jp_ss1",
+      "name": "Okazaki",
+      "country": "Japan",
+      "level": "/Game/Levels/WrcgJpSS1",
+      "variant": "WrcgJpSS1Full"
+    },
+    "WrcgJpSS1R": {
+      "id": "favio_jp_ss1r",
+      "slug": "jp_ss1r",
+      "name": "Okazaki reverse",
+      "country": "Japan",
+      "level": "/Game/Levels/WrcgJpSS1R",
+      "variant": "WrcgJpSS1RFull"
+    },
+    "WrcgJpSS2": {
+      "id": "favio_jp_ss2",
+      "slug": "jp_ss2",
+      "name": "Nagakute",
+      "country": "Japan",
+      "level": "/Game/Levels/WrcgJpSS2",
+      "variant": "WrcgJpSS2Full"
+    },
+    "WrcgJpSS2R": {
+      "id": "favio_jp_ss2r",
+      "slug": "jp_ss2r",
+      "name": "Nagakute reverse",
+      "country": "Japan",
+      "level": "/Game/Levels/WrcgJpSS2R",
+      "variant": "WrcgJpSS2RFull"
+    },
+    "WrcgJpSS3": {
+      "id": "favio_jp_ss3",
+      "slug": "jp_ss3",
+      "name": "Shinshiro",
+      "country": "Japan",
+      "level": "/Game/Levels/WrcgJpSS3",
+      "variant": "WrcgJpSS3Full"
+    },
+    "WrcgJpSS3R": {
+      "id": "favio_jp_ss3r",
+      "slug": "jp_ss3r",
+      "name": "Shinshiro reverse",
+      "country": "Japan",
+      "level": "/Game/Levels/WrcgJpSS3R",
+      "variant": "WrcgJpSS3RFull"
+    },
+    "WrcgJpES2": {
+      "id": "favio_jp_es2",
+      "slug": "jp_es2",
+      "name": "Shitara",
+      "country": "Japan",
+      "level": "/Game/Levels/WrcgJpES2",
+      "variant": "WrcgJpES2Full"
+    },
+    "WrcgJpES2R": {
+      "id": "favio_jp_es2r",
+      "slug": "jp_es2r",
+      "name": "Shitara reverse",
+      "country": "Japan",
+      "level": "/Game/Levels/WrcgJpES2R",
+      "variant": "WrcgJpES2RFull"
+    },
+    "WrcgArSS1": {
+      "id": "favio_ar_ss1",
+      "slug": "ar_ss1",
+      "name": "El Condor",
+      "country": "Argentina",
+      "level": "/Game/Levels/WrcgArSS1",
+      "variant": "WrcgArSS1Full"
+    },
+    "WrcgArSS1R": {
+      "id": "favio_ar_ss1r",
+      "slug": "ar_ss1r",
+      "name": "El Condor reverse",
+      "country": "Argentina",
+      "level": "/Game/Levels/WrcgArSS1R",
+      "variant": "WrcgArSS1RFull"
+    },
+    "WrcgArSS2": {
+      "id": "favio_ar_ss2",
+      "slug": "ar_ss2",
+      "name": "Cuchilla Nevada",
+      "country": "Argentina",
+      "level": "/Game/Levels/WrcgArSS2",
+      "variant": "WrcgArSS2Full"
+    },
+    "WrcgArSS2R": {
+      "id": "favio_ar_ss2r",
+      "slug": "ar_ss2r",
+      "name": "Cuchilla Nevada reverse",
+      "country": "Argentina",
+      "level": "/Game/Levels/WrcgArSS2R",
+      "variant": "WrcgArSS2RFull"
+    },
+    "WrcgArES1": {
+      "id": "favio_ar_es1",
+      "slug": "ar_es1",
+      "name": "Cantera",
+      "country": "Argentina",
+      "level": "/Game/Levels/WrcgArES1",
+      "variant": "WrcgArES1Full"
+    },
+    "WrcgArES1R": {
+      "id": "favio_ar_es1r",
+      "slug": "ar_es1r",
+      "name": "Cantera reverse",
+      "country": "Argentina",
+      "level": "/Game/Levels/WrcgArES1R",
+      "variant": "WrcgArES1RFull"
+    },
+    "WrcgArFernetBranca": {
+      "id": "favio_fernet_branca",
+      "slug": "fernet_branca",
+      "name": "Parque Tematico",
+      "country": "Argentina",
+      "level": "/Game/Levels/WrcgArFernetBranca",
+      "variant": "WrcgArFernetBrancaFull"
+    },
+    "WrcgClSS1": {
+      "id": "favio_cl_ss1",
+      "slug": "cl_ss1",
+      "name": "Lircay",
+      "country": "Chile",
+      "level": "/Game/Levels/WrcgClSS1",
+      "variant": "WrcgClSS1Full"
+    },
+    "WrcgClSS1R": {
+      "id": "favio_cl_ss1r",
+      "slug": "cl_ss1r",
+      "name": "Lircay reverse",
+      "country": "Chile",
+      "level": "/Game/Levels/WrcgClSS1R",
+      "variant": "WrcgClSS1RFull"
+    },
+    "WrcgClSS2": {
+      "id": "favio_cl_ss2",
+      "slug": "cl_ss2",
+      "name": "Biobío",
+      "country": "Chile",
+      "level": "/Game/Levels/WrcgClSS2",
+      "variant": "WrcgClSS2Full"
+    },
+    "WrcgClSS2R": {
+      "id": "favio_cl_ss2r",
+      "slug": "cl_ss2r",
+      "name": "Biobío reverse",
+      "country": "Chile",
+      "level": "/Game/Levels/WrcgClSS2R",
+      "variant": "WrcgClSS2RFull"
+    },
+    "WrcgClSS3": {
+      "id": "favio_cl_ss3",
+      "slug": "cl_ss3",
+      "name": "Pelún",
+      "country": "Chile",
+      "level": "/Game/Levels/WrcgClSS3",
+      "variant": "WrcgClSS3Full"
+    },
+    "WrcgClSS3R": {
+      "id": "favio_cl_ss3r",
+      "slug": "cl_ss3r",
+      "name": "Pelún reverse",
+      "country": "Chile",
+      "level": "/Game/Levels/WrcgClSS3R",
+      "variant": "WrcgClSS3RFull"
+    },
+    "WrcgClES1": {
+      "id": "favio_cl_es1",
+      "slug": "cl_es1",
+      "name": "El Puma",
+      "country": "Chile",
+      "level": "/Game/Levels/WrcgClES1",
+      "variant": "WrcgClES1Full"
+    },
+    "WrcgClES1R": {
+      "id": "favio_cl_es1r",
+      "slug": "cl_es1r",
+      "name": "El Puma reverse",
+      "country": "Chile",
+      "level": "/Game/Levels/WrcgClES1R",
+      "variant": "WrcgClES1RFull"
+    },
+    "WrcgDeSS1": {
+      "id": "favio_de_ss1",
+      "slug": "de_ss1",
+      "name": "Moselland",
+      "country": "Germany",
+      "level": "/Game/Levels/WrcgDeSS1",
+      "variant": "WrcgDeSS1Full"
+    },
+    "WrcgDeSS1R": {
+      "id": "favio_de_ss1r",
+      "slug": "de_ss1r",
+      "name": "Moselland reverse",
+      "country": "Germany",
+      "level": "/Game/Levels/WrcgDeSS1R",
+      "variant": "WrcgDeSS1RFull"
+    },
+    "WrcgDeSS2": {
+      "id": "favio_de_ss2",
+      "slug": "de_ss2",
+      "name": "Freisen",
+      "country": "Germany",
+      "level": "/Game/Levels/WrcgDeSS2",
+      "variant": "WrcgDeSS2Full"
+    },
+    "WrcgDeSS2R": {
+      "id": "favio_de_ss2r",
+      "slug": "de_ss2r",
+      "name": "Freisen reverse",
+      "country": "Germany",
+      "level": "/Game/Levels/WrcgDeSS2R",
+      "variant": "WrcgDeSS2RFull"
+    },
+    "WrcgDeES1": {
+      "id": "favio_de_es1",
+      "slug": "de_es1",
+      "name": "Mittelmosel",
+      "country": "Germany",
+      "level": "/Game/Levels/WrcgDeES1",
+      "variant": "WrcgDeES1Full"
+    },
+    "WrcgDeES1R": {
+      "id": "favio_de_es1r",
+      "slug": "de_es1r",
+      "name": "Mittelmosel reverse",
+      "country": "Germany",
+      "level": "/Game/Levels/WrcgDeES1R",
+      "variant": "WrcgDeES1RFull"
+    },
+    "WrcgMxSS1R": {
+      "id": "favio_mx_ss1r",
+      "slug": "mx_ss1r",
+      "name": "Media Luna reverse",
+      "country": "Mexico",
+      "level": "/Game/Levels/WrcgMxSS1R",
+      "variant": "WrcgMxSS1RFull"
+    },
+    "WrcgMxSS2R": {
+      "id": "favio_mx_ss2r",
+      "slug": "mx_ss2r",
+      "name": "Ibarrilla reverse",
+      "country": "Mexico",
+      "level": "/Game/Levels/WrcgMxSS2R",
+      "variant": "WrcgMxSS2RFull"
+    },
+    "WrcgMxES1R": {
+      "id": "favio_mx_es1r",
+      "slug": "mx_es1r",
+      "name": "El Chocolate reverse",
+      "country": "Mexico",
+      "level": "/Game/Levels/WrcgMxES1R",
+      "variant": "WrcgMxES1RFull"
+    },
+    "WrcgMxAutodromoLeon": {
+      "id": "favio_autodromo_leon",
+      "slug": "autodromo_leon",
+      "name": "Autódromo de León",
+      "country": "Mexico",
+      "level": "/Game/Levels/WrcgMxAutodromoLeon",
+      "variant": "WrcgMxAutodromoLeonFull"
+    },
+    "WrcgTkSS1": {
+      "id": "favio_tk_ss1",
+      "slug": "tk_ss1",
+      "name": "Datça",
+      "country": "Turkey",
+      "level": "/Game/Levels/WrcgTkSS1",
+      "variant": "WrcgTkSS1Full"
+    },
+    "WrcgTkSS1R": {
+      "id": "favio_tk_ss1r",
+      "slug": "tk_ss1r",
+      "name": "Datça reverse",
+      "country": "Turkey",
+      "level": "/Game/Levels/WrcgTkSS1R",
+      "variant": "WrcgTkSS1RFull"
+    },
+    "WrcgTkSS2": {
+      "id": "favio_tk_ss2",
+      "slug": "tk_ss2",
+      "name": "Çiçekli",
+      "country": "Turkey",
+      "level": "/Game/Levels/WrcgTkSS2",
+      "variant": "WrcgTkSS2Full"
+    },
+    "WrcgTkSS2R": {
+      "id": "favio_tk_ss2r",
+      "slug": "tk_ss2r",
+      "name": "Çiçekli reverse",
+      "country": "Turkey",
+      "level": "/Game/Levels/WrcgTkSS2R",
+      "variant": "WrcgTkSS2RFull"
+    },
+    "WrcgTkES1": {
+      "id": "favio_tk_es1",
+      "slug": "tk_es1",
+      "name": "Yeşilbelde",
+      "country": "Turkey",
+      "level": "/Game/Levels/WrcgTkES1",
+      "variant": "WrcgTkES1Full"
+    },
+    "WrcgTkES1R": {
+      "id": "favio_tk_es1r",
+      "slug": "tk_es1r",
+      "name": "Yeşilbelde reverse",
+      "country": "Turkey",
+      "level": "/Game/Levels/WrcgTkES1R",
+      "variant": "WrcgTkES1RFull"
+    },
+    "WrcgGbSS1": {
+      "id": "favio_gb_ss1",
+      "slug": "gb_ss1",
+      "name": "Hafren",
+      "country": "Wales",
+      "level": "/Game/Levels/WrcgGbSS1",
+      "variant": "WrcgGbSS1Full"
+    },
+    "WrcgGbSS1R": {
+      "id": "favio_gb_ss1r",
+      "slug": "gb_ss1r",
+      "name": "Hafren reverse",
+      "country": "Wales",
+      "level": "/Game/Levels/WrcgGbSS1R",
+      "variant": "WrcgGbSS1RFull"
+    },
+    "WrcgGbSS2": {
+      "id": "favio_gb_ss2",
+      "slug": "gb_ss2",
+      "name": "Great Orme",
+      "country": "Wales",
+      "level": "/Game/Levels/WrcgGbSS2",
+      "variant": "WrcgGbSS2Full"
+    },
+    "WrcgGbSS2R": {
+      "id": "favio_gb_ss2r",
+      "slug": "gb_ss2r",
+      "name": "Great Orme reverse",
+      "country": "Wales",
+      "level": "/Game/Levels/WrcgGbSS2R",
+      "variant": "WrcgGbSS2RFull"
+    },
+    "WrcgGbSS3": {
+      "id": "favio_gb_ss3",
+      "slug": "gb_ss3",
+      "name": "Brenig",
+      "country": "Wales",
+      "level": "/Game/Levels/WrcgGbSS3",
+      "variant": "WrcgGbSS3Full"
+    },
+    "WrcgGbSS3R": {
+      "id": "favio_gb_ss3r",
+      "slug": "gb_ss3r",
+      "name": "Brenig reverse",
+      "country": "Wales",
+      "level": "/Game/Levels/WrcgGbSS3R",
+      "variant": "WrcgGbSS3RFull"
+    },
+    "WrcgGbES1": {
+      "id": "favio_gb_es1",
+      "slug": "gb_es1",
+      "name": "Dyfi",
+      "country": "Wales",
+      "level": "/Game/Levels/WrcgGbES1",
+      "variant": "WrcgGbES1Full"
+    },
+    "WrcgGbES1R": {
+      "id": "favio_gb_es1r",
+      "slug": "gb_es1r",
+      "name": "Dyfi reverse",
+      "country": "Wales",
+      "level": "/Game/Levels/WrcgGbES1R",
+      "variant": "WrcgGbES1RFull"
+    },
+    "WrcgArARShort01": {
+      "id": "favio_ar_short_01",
+      "slug": "ar_short_01",
+      "name": "Argentina shakedown",
+      "country": "Argentina",
+      "level": "/Game/Levels/WrcgArARShort01",
+      "variant": "WrcgArARShort01Full"
+    },
+    "WrcgBeBEShort01": {
+      "id": "favio_be_short_01",
+      "slug": "be_short_01",
+      "name": "Belgium shakedown",
+      "country": "Belgium",
+      "level": "/Game/Levels/WrcgBeBEShort01",
+      "variant": "WrcgBeBEShort01Full"
+    },
+    "WrcgClCLShort01": {
+      "id": "favio_cl_short_01",
+      "slug": "cl_short_01",
+      "name": "Chile shakedown",
+      "country": "Chile",
+      "level": "/Game/Levels/WrcgClCLShort01",
+      "variant": "WrcgClCLShort01Full"
+    },
+    "WrcgDeDEShort01": {
+      "id": "favio_de_short_01",
+      "slug": "de_short_01",
+      "name": "Germany shakedown",
+      "country": "Germany",
+      "level": "/Game/Levels/WrcgDeDEShort01",
+      "variant": "WrcgDeDEShort01Full"
+    },
+    "WrcgEeEEShort01": {
+      "id": "favio_ee_short_01",
+      "slug": "ee_short_01",
+      "name": "Estonia shakedown",
+      "country": "Estonia",
+      "level": "/Game/Levels/WrcgEeEEShort01",
+      "variant": "WrcgEeEEShort01Full"
+    },
+    "WrcgEsES2Short01": {
+      "id": "favio_es2_short_01",
+      "slug": "es2_short_01",
+      "name": "Spain shakedown",
+      "country": "Spain",
+      "level": "/Game/Levels/WrcgEsES2Short01",
+      "variant": "WrcgEsES2Short01Full"
+    },
+    "WrcgFiFI2Short01": {
+      "id": "favio_fi2_short_01",
+      "slug": "fi2_short_01",
+      "name": "Finland shakedown",
+      "country": "Finland",
+      "level": "/Game/Levels/WrcgFiFI2Short01",
+      "variant": "WrcgFiFI2Short01Full"
+    },
+    "WrcgFrFRShort01": {
+      "id": "favio_fr_short_01",
+      "slug": "fr_short_01",
+      "name": "Corse shakedown",
+      "country": "France",
+      "level": "/Game/Levels/WrcgFrFRShort01",
+      "variant": "WrcgFrFRShort01Full"
+    },
+    "WrcgGbGBShort01": {
+      "id": "favio_gb_short_01",
+      "slug": "gb_short_01",
+      "name": "Wales shakedown",
+      "country": "Wales",
+      "level": "/Game/Levels/WrcgGbGBShort01",
+      "variant": "WrcgGbGBShort01Full"
+    },
+    "WrcgGrGRShort01": {
+      "id": "favio_gr_short_01",
+      "slug": "gr_short_01",
+      "name": "Acropolis shakedown",
+      "country": "Greece",
+      "level": "/Game/Levels/WrcgGrGRShort01",
+      "variant": "WrcgGrGRShort01Full"
+    },
+    "WrcgHrHRShort01": {
+      "id": "favio_hr_short_01",
+      "slug": "hr_short_01",
+      "name": "Croatia shakedown",
+      "country": "Croatia",
+      "level": "/Game/Levels/WrcgHrHRShort01",
+      "variant": "WrcgHrHRShort01Full"
+    },
+    "WrcgItITShort01": {
+      "id": "favio_it_short_01",
+      "slug": "it_short_01",
+      "name": "Sardinia shakedown",
+      "country": "Italy",
+      "level": "/Game/Levels/WrcgItITShort01",
+      "variant": "WrcgItITShort01Full"
+    },
+    "WrcgItSRShort01": {
+      "id": "favio_it_sr_short_01",
+      "slug": "it_sr_short_01",
+      "name": "Sanremo shakedown",
+      "country": "Italy",
+      "level": "/Game/Levels/WrcgItSRShort01",
+      "variant": "WrcgItSRShort01Full"
+    },
+    "WrcgMcMCShort01": {
+      "id": "favio_mc_short_01",
+      "slug": "mc_short_01",
+      "name": "Monte Carlo shakedown",
+      "country": "Monaco",
+      "level": "/Game/Levels/WrcgMcMCShort01",
+      "variant": "WrcgMcMCShort01Full"
+    },
+    "WrcgMxMXShort01": {
+      "id": "favio_mx_short_01",
+      "slug": "mx_short_01",
+      "name": "Mexico shakedown",
+      "country": "Mexico",
+      "level": "/Game/Levels/WrcgMxMXShort01",
+      "variant": "WrcgMxMXShort01Full"
+    },
+    "WrcgNzNZShort01": {
+      "id": "favio_nz_short_01",
+      "slug": "nz_short_01",
+      "name": "New Zealand shakedown",
+      "country": "NewZealand",
+      "level": "/Game/Levels/WrcgNzNZShort01",
+      "variant": "WrcgNzNZShort01Full"
+    },
+    "WrcgPtPT2Short01": {
+      "id": "favio_pt2_short_01",
+      "slug": "pt2_short_01",
+      "name": "Portugal shakedown",
+      "country": "Portugal",
+      "level": "/Game/Levels/WrcgPtPT2Short01",
+      "variant": "WrcgPtPT2Short01Full"
+    },
+    "WrcgSeSE2Short01": {
+      "id": "favio_se2_short_01",
+      "slug": "se2_short_01",
+      "name": "Sweden shakedown",
+      "country": "Sweden",
+      "level": "/Game/Levels/WrcgSeSE2Short01",
+      "variant": "WrcgSeSE2Short01Full"
+    },
+    "WrcgTkTKShort01": {
+      "id": "favio_tk_short_01",
+      "slug": "tk_short_01",
+      "name": "Turkey shakedown",
+      "country": "Turkey",
+      "level": "/Game/Levels/WrcgTkTKShort01",
+      "variant": "WrcgTkTKShort01Full"
+    }
+  }
+}
