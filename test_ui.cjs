@@ -4,3 +4,11 @@ test('controls have unique identifiers and icon links resolve',()=>{const html=r
 const stages=[{name:'Riudecanyes',country:'España',active:true},{name:'Savalla',country:'España',active:false},{name:'Ntulele',country:'Kenia',active:true}];
 test('search ignores case and accents and includes country',()=>{assert.equal(filterStages(stages,'all','ESPANA').length,2);assert.equal(filterStages(stages,'all','tule')[0].name,'Ntulele');});
 test('active and disabled filters compose with search',()=>{assert.equal(filterStages(stages,'active','').length,2);assert.deepEqual(filterStages(stages,'disabled','Espana').map(x=>x.name),['Savalla']);assert.equal(filterStages(stages,'disabled','Kenia').length,0);});
+
+test('active insignia requires a verified in-game mod after manual scan',()=>{
+ const {isInGame}=require('./ui/app.js');
+ const ready={active:true,valid:true,compatible:true,menu_ready:true};
+ assert.equal(isInGame(ready,true),true);
+ assert.equal(isInGame(ready,false),false);
+ for(const key of Object.keys(ready)) assert.equal(isInGame({...ready,[key]:false},true),false,key);
+});

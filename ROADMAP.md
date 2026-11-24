@@ -65,3 +65,12 @@ real permanece en simulacion; no se han borrado respaldos reales en esta tarea.
 Tamanos medidos: instalador 223096969 bytes, payload extraido 311202632 bytes.
 No hay una nueva prueba en el juego ni se han probado todos los escenarios de
 fallo de actualizacion; mantener recuperacion conservadora.
+
+## Release 0.2.1
+
+Includes reviewed Thierache 3.3 recognition, exact custom asset paths, distinct
+location/image row references, larger branding and active-state insignia.
+Thierache lifecycle/rollback passed in isolation and the owner confirmed it
+worked in game. Game validation is scoped to that reviewed mod release/build.
+The 0.2.0 draft was superseded before public release; original game assets and
+third-party level packages remain excluded from publication.

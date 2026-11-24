@@ -1,34 +1,20 @@
-ACR Pak Manager 0.2.0
+ACR Pak Manager 0.2.1
 
-- New name, supplied logo and white/cyan ACR application icon.
-- Automatic Steam library discovery; Steam folder selection and advanced game-folder fallback.
-- Lower installed footprint: the launcher no longer retains the full setup payload.
-- Protected menu-backup retention (3 by default; 512 MiB soft budget) and cleanup of marked abandoned temporaries.
-- Keep the current installation and previous version for recovery; unknown legacy folders stay protected.
-- Reviewed integration for Chile BioBio 0.4.4, forward and reverse, using the user's own original registry on first integration. No third-party level/assets are included.
-- Manual Scan, preserved images/descriptions, English/Spanish and existing profiles retained.
+- New ACR Pak Manager identity, larger supplied logo, cyan PAK and R, and a new transparent MOD ACTIVE / IN GAME insignia. Removed Local library from the header.
+- Automatic Steam library discovery; Steam-folder selection and advanced game-folder fallback.
+- Lower installed footprint: setup is no longer retained as the launcher; same-volume native launcher hardlinks avoid a duplicate copy.
+- Protected menu-backup retention (latest 3 by default, 512 MiB soft budget), marked stale-temporary cleanup and retention of a previous healthy app version. Unknown/unfinished/corrupt or pinned recovery data remains protected.
+- Reviewed Chile BioBio 0.4.4 forward/reverse and Thiérache S1 3.3 integrations, using the player's original mod registries. Custom level paths and distinct location/image row keys are supported without widening asset permissions to arbitrary paths.
+- Manual Scan, English/Spanish, existing profiles and original mod images/descriptions preserved. Future third-party mod updates still require review.
 
-Download **ACR-Mod-Manager-Setup.exe** below. The stable asset/repository name is
-kept so existing ACR Mod Manager clients receive this update. SHA256SUMS.txt
-verifies the installer. Close the manager before running setup.
+Download **ACR-Mod-Manager-Setup.exe** and close the manager before running it.
+The repository and asset filenames remain stable for existing update checks.
+The v0.2.0 draft was superseded before publication; this release includes the final Thierache and interface changes.
 
-Download: about 213 MiB. Clean extracted application: about 297 MiB, plus user
-data/cache/backups and any previous retained version. This avoids the extra full
-setup copy on disk; it is not a network installer and does not compact the
-catalogue yet. The downloaded installer may still remain in Downloads.
+For Thiérache manual addition, keep the author's extracted layout intact and select its `~mods` folder; its `menu/S1_seule` registry must remain beside it. The combined registry for Chemin des Érables is not automatically adopted. No mod levels/assets are redistributed.
 
-Validated: compiled Windows x64 host/setup; isolated installer extraction,
-repeat installation, data preservation and healthy-version retention; 40 Python tests passed, 1 optional
-fixture skipped; 3 JavaScript tests; real Steam discovery; protected cleanup
-dry-run. No new in-game run was performed for this release.
+Validation: 43 Python tests passed, 1 optional real fixture skipped; 4 JavaScript tests. Isolated real-data Thierache installation, disable/re-enable, no-change detection and rollback passed; existing level files were unchanged. The owner confirmed Thierache worked in game. Clean extraction, repeat installation, profile preservation, previous healthy version retention and standalone Python/catalogue checks are covered by the installer self-test.
 
-Requires Windows x64, WebView2 and ACR build 26756580. First table extraction
-requires Internet. Installer is unsigned. No level packs or original game tables
-are distributed. Future third-party mod versions require review if their files
-change; arbitrary external mods are not automatically supported.
+Requires Windows x64, WebView2 and supported ACR build 26756580. First table extraction requires Internet. Installer is unsigned. Application data/cache/backups and a previous retained version require additional storage; the downloaded setup can remain in Downloads. Database compaction and donor-cache pruning are not included.
 
-Español: nueva identidad ACR Pak Manager, detección de Steam y menor espacio de
-instalación al evitar guardar el instalador completo como lanzador. Limpieza
-automática protegida de respaldos/temporales. Conserva tus ajustes; cierra la app
-antes de actualizar. Chile BioBio 0.4.4 usa su registro original en la primera
-integración. Escanear sigue siendo manual. No garantiza versiones futuras de mods.
+Español: nueva imagen y distintivo de mods activos, detección de Steam, menor espacio instalado y limpieza protegida. Soporte revisado de Chile BioBio 0.4.4 y Thiérache S1 3.3; el propietario confirmó Thierache dentro del juego. Conserva los archivos extraídos del mod y sus menús originales para la primera integración. Escanear sigue siendo manual. Cierra el gestor antes de actualizar.

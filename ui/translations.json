@@ -206,7 +206,8 @@
     "Selecciona la carpeta de Steam; buscaremos ACR en todas sus bibliotecas": "Select your Steam folder; we will look for ACR in all its libraries",
     "No se ha encontrado ACR en las bibliotecas de Steam. ¿Quieres seleccionar su carpeta manualmente?": "ACR was not found in your Steam libraries. Would you like to select its folder manually?",
     "Selecciona la carpeta de Assetto Corsa Rally o su carpeta Paks": "Select the Assetto Corsa Rally folder or its Paks folder",
-    "La limpieza automática conserva los últimos 3 respaldos de menú. El límite predeterminado es 512 MB; los respaldos fijados y los datos de recuperación quedan protegidos.": "Automatic cleanup keeps the latest 3 menu backups. The default budget is 512 MB; pinned backups and recovery data stay protected."
+    "La limpieza automática conserva los últimos 3 respaldos de menú. El límite predeterminado es 512 MB; los respaldos fijados y los datos de recuperación quedan protegidos.": "Automatic cleanup keeps the latest 3 menu backups. The default budget is 512 MB; pinned backups and recovery data stay protected.",
+    "Mod activo: en el juego": "Mod active: in game"
   },
   "prefixes": {
     "Tablas instaladas; respaldo: ": "Tables installed; backup: ",

@@ -30,3 +30,11 @@ footer{justify-content:center;gap:14px;flex-wrap:wrap}.footer-button{display:inl
 .brand-wordmark{display:flex;flex-direction:column;gap:1px}.brand-acr{font-family:Arial,sans-serif;font-style:italic;font-weight:900;font-size:25px;letter-spacing:-1px;color:#f5fafd;line-height:1.1}.brand-acr>span{color:#00deed}.brand-product{font-size:11.5px;letter-spacing:2px;color:#ced7dc;font-weight:650}
 .primary-button{border-color:#00deed;background:linear-gradient(180deg,#3cebf4,#00bacb);color:#082b30}
 @media(max-width:790px){.brand-logo{width:44px;height:44px}.brand-acr{font-size:21px}.brand-product{font-size:9px;letter-spacing:1px}.topbar{gap:12px}.local-pill{display:none}}
+
+/* Larger identity and owner-supplied active-state insignia. */
+.topbar{min-height:108px}.brand-logo{width:88px;height:88px;border-radius:17px}
+.brand{gap:16px}.brand-acr{font-size:34px}.brand-product{font-size:14px;letter-spacing:2px}.brand-pak{color:var(--accent)}
+.toolbar-actions{margin-left:auto}.mod-active-badge{display:block;width:220px;height:auto;max-height:82px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 3px 8px #0006)}
+.mod-active-badge[hidden],#hero-status[hidden]{display:none}
+@media(max-width:1050px){.brand-logo{width:76px;height:76px}.topbar{min-height:96px}.brand-acr{font-size:30px}.brand-product{font-size:12px}.topbar{gap:14px;padding-left:24px;padding-right:24px}.mod-active-badge{width:200px}}
+@media(max-width:790px){.brand-logo{width:64px;height:64px}.brand-acr{font-size:27px}.brand-product{font-size:11px;letter-spacing:1px}.mod-active-badge{width:180px}.topbar{min-height:84px;gap:10px}}

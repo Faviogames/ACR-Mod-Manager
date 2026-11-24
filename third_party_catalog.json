@@ -80,6 +80,95 @@
         "draft": false
       },
       "stem": "pakchunk99-ChileBioBio_P"
+    },
+    "oxmod_thierache_s1": {
+      "adapter": "explicit-paths/1",
+      "version": "3.3",
+      "stem": "zz_acrxs_s_acrxsthi04_P",
+      "files": {
+        "zz_acrxs_s_acrxsthi04_P.pak": {
+          "size": 347,
+          "sha256": "75e7144577253917f6da7312ef5e585b12fb728226a22b0938323751a6b555cd"
+        },
+        "zz_acrxs_s_acrxsthi04_P.utoc": {
+          "size": 484545,
+          "sha256": "e29ccc414ca42bea3328eaa1a411437b1197761358089ab5afde4b0adf5f0dab"
+        },
+        "zz_acrxs_s_acrxsthi04_P.ucas": {
+          "size": 2038905018,
+          "sha256": "fdfeb2f18f3acaafe7516a7052021c3a2c8dae06a1b9667ce96e1781c4fa5bea"
+        }
+      },
+      "tracks": [
+        "AcrXsThi04"
+      ],
+      "compatible_schemas": [
+        "acr-26756580"
+      ],
+      "level_paths": [
+        "acr/Content/AcrXs/Stages/AcrXsThi04/AcrXsThi04.umap"
+      ],
+      "ui_packages": [
+        "acr/Content/AcrXs/Locations/Thierache/T_Thierache_Logo",
+        "acr/Content/AcrXs/Locations/Thierache/T_Thierache_Tile"
+      ],
+      "rows": {
+        "DT_Tracks": [
+          "AcrXsThi04"
+        ],
+        "DT_TracksVariants": [
+          "AcrXsThi04FullForward"
+        ],
+        "DT_TracksTextures": [
+          "AcrXsThi04_Elevation",
+          "AcrXsThi04_MapSmall",
+          "AcrXsThi04_Map"
+        ],
+        "DT_TracksLocations": [
+          "Thierache"
+        ],
+        "DT_TracksLocationsBackgrounds": [
+          "AcrXsThierache"
+        ],
+        "DT_TracksLocationsLogos": [
+          "AcrXsThierache"
+        ],
+        "DT_Levels": [
+          "AcrXsThi04"
+        ]
+      },
+      "companion": {
+        "zz_acrxs_registry_P.pak": {
+          "size": 347,
+          "sha256": "75e7144577253917f6da7312ef5e585b12fb728226a22b0938323751a6b555cd"
+        },
+        "zz_acrxs_registry_P.utoc": {
+          "size": 1727,
+          "sha256": "66caf217946ad8453a111d397a1182e5e29280cc06b7bdcaf90930d191bbe225"
+        },
+        "zz_acrxs_registry_P.ucas": {
+          "size": 1882254,
+          "sha256": "56c69427f5c9c8d9c54e989b15db4c090e7b64bda9e958e1c41425fcd0091e44"
+        }
+      },
+      "installer_registry": "menu/S1_seule",
+      "display_name": "Thiérache — Le Bois du Mont (S1)",
+      "author": "Oxmod",
+      "credits": [
+        {
+          "who": "Oxmod",
+          "what": "stage"
+        },
+        {
+          "who": "IGN",
+          "what": "geographic data",
+          "licence": "Licence Ouverte 2.0"
+        }
+      ],
+      "licence": {
+        "summary": "© 2026 Oxmod. All rights reserved. No redistribution.",
+        "draft": false
+      }
     }
   }
 }

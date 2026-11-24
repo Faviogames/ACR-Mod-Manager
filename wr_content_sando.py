@@ -39,11 +39,11 @@ def companion_paths(manager,records):
         expected=known['companion']
         present=[manager.mods/name for name in expected if (manager.mods/name).exists()]
         if present and len(present)!=len(expected):
-            raise ValueError('Registro Sando incompleto; no se sustituye automáticamente')
+            raise ValueError('Registro externo incompleto; no se sustituye automáticamente')
         for path in present:
             info=expected[path.name]
             if path.is_symlink() or path.stat().st_size!=info['size'] or manager.hashes.file(path)!=info['sha256']:
-                raise ValueError('El registro Sando cambió; hay que revisar sus tablas antes de sustituirlo')
+                raise ValueError('El registro externo cambió; hay que revisar sus tablas antes de sustituirlo')
             result.add(path.resolve())
     return result
 
@@ -61,6 +61,10 @@ def adopt_installed(manager,identity):
             cached=manager.state/'catalog'/(stem+'.stage.json')
             if cached.is_file():
                 manager.load_manifest(cached,identity,files_root=folder)
+                continue
+            if known.get('adapter')=='explicit-paths/1':
+                from wr_content_reviewed import adopt_one
+                adopt_one(manager,folder,identity,stage_id,known)
                 continue
             before=inventory_stamp(folder)
             if identity['schema'] not in known['compatible_schemas']:

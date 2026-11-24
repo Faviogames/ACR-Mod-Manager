@@ -39,7 +39,8 @@ def retain_menu(manager,source):
 
 def prepare_incoming(manager,folder,identity,destination):
     """Match bare official packs to known internal definitions, without sidecars."""
-    result=[]
+    from wr_content_reviewed import prepare_incoming as prepare_reviewed
+    result=prepare_reviewed(manager,folder,identity,destination)
     templates=[read(p) for p in (manager.state/'catalog').glob('*.stage.json')]
     database=read(ROOT/'official_database.json',{})
     catalog=official_catalog()
@@ -136,6 +137,8 @@ def read_menu(manager, toc, destination):
                         raise RuntimeError('El catálogo temporal debe estar en el disco del juego')
                     shutil.copy2(source_file,target)
         filters=['Data/Database/Main/Common/DT_Levels','Data/Database/Main/TrackSelection/DT_']
+        from wr_content_reviewed import ui_packages
+        filters += [p.removeprefix('acr/Content/') for p in ui_packages() if p+'.uasset' in contents]
         filters += [p.removeprefix('acr/Content/').removesuffix('.uasset') for p in contents
                     if p.startswith(('acr/Content/Data/UITextures/','acr/Content/Environments/WrcgShared/PhysicalMaterials/'))
                     or Path(p).stem in ('PM_SurfaceSnow','PM_SurfaceDeepSnow')]

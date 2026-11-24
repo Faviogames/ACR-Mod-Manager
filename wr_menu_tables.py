@@ -54,6 +54,12 @@ def _ownership(tables, track):
     for table in ("DT_Levels", "DT_TracksTextures"):
         record[table].extend(name for name in _row_map(tables, table)
                              if name == track or name.startswith(track + "_"))
+    for table in ("DT_TracksLocationsLogos", "DT_TracksLocationsBackgrounds"):
+        record[table] = []
+        for location in record['locations']:
+            row = _row_map(tables, 'DT_TracksLocations').get(location)
+            refs = [name for target,name in _references(row) if 'DT_'+target == table]
+            record[table].extend(refs or ([location] if location in _row_map(tables,table) else []))
     return {key: sorted(set(values)) for key, values in record.items()}
 
 def _join_ownership(*records):
@@ -92,7 +98,7 @@ def merge_menu_tables(baseline, incoming, active_tracks, owned=None, *, claimed=
             merged[relative] = asset
             continue
         selected = set(current_rows.get(table, ()))
-        if table.startswith("DT_TracksLocations"):
+        if table == "DT_TracksLocations":
             selected = active_locations
         candidates = {row["Name"]: row for row in _rows(update) if row["Name"] in selected} if update else {}
         dropped = set(all_owned.get(table, ()))

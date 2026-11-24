@@ -25,7 +25,7 @@ def stage_details(data):
     location = next(iter(_row_map(data['tables'], 'DT_TracksLocations').values()), {})
     country = text(_field(location, 'Name')).replace('[MOD] ', '')
     country = {'Spain': 'España', 'Greece': 'Grecia', 'Kenya': 'Kenia'}.get(country, country)
-    return dict(id=data['id'], name=data.get('display_name') or text(_field(track, 'Name'), data['track']), country=country,
+    return dict(source_kind='wrcg' if data['track'].startswith('Wrcg') else 'external', id=data['id'], name=data.get('display_name') or text(_field(track, 'Name'), data['track']), country=country,
                 description=text(_field(location, 'HistoryAndTrivia')),
                 version=data['version'], build=data['built_with'], author='Comunidad' if data['track'].startswith('Wrcg') else data.get('author') or data['id'].split('_', 1)[0],
                 size=sum(f['size'] for f in data['files'].values()), has_preview=bool(data.get('preview')),
@@ -266,7 +266,7 @@ class Handler(BaseHTTPRequestHandler):
                     raw = self.server.engine.previews.get(key)
                 return self.send(200, raw, 'image/png') if raw else self.send(404, {'error': 'Sin imagen'})
             return self.send(404, {'error': 'Ruta inexistente'})
-        files = {'/': 'index.html', '/app.css': 'app.css', '/app.js': 'app.js', '/logo.svg': 'logo.svg', '/translations.json': 'translations.json', '/assets/acr-logo.jpg': 'assets/acr-logo.jpg', '/assets/app-icon.svg': 'assets/app-icon.svg', '/assets/app-icon.png': 'assets/app-icon.png', '/assets/app.ico': 'assets/app.ico'}
+        files = {'/': 'index.html', '/app.css': 'app.css', '/app.js': 'app.js', '/logo.svg': 'logo.svg', '/translations.json': 'translations.json', '/assets/acr-logo.jpg': 'assets/acr-logo.jpg', '/assets/app-icon.svg': 'assets/app-icon.svg', '/assets/app-icon.png': 'assets/app-icon.png', '/assets/app.ico': 'assets/app.ico', '/assets/mod-active.png': 'assets/mod-active.png'}
         if path not in files:
             return self.send(404, {'error': 'Ruta inexistente'})
         file = ROOT/'ui'/files[path]

@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,zipfile
 ROOT=Path(__file__).resolve().parent
-FILES=['wr_content.py','wr_content_app.py','wr_content_catalog.py','wr_content_imports.py','wr_content_tools.py','wr_content_transaction.py','wr_content_physics.py','wr_content_updates.py','wr_content_sando.py','wr_content_cleanup.py','wr_content_steam.py','third_party_catalog.json','wr_menu_tables.py','wr_iostore_compress.py','app_release.json','official_catalog.json','official_database.json','physics_recipe.json','compatibility.json','INICIAR_GESTOR.bat']
+FILES=['wr_content.py','wr_content_app.py','wr_content_catalog.py','wr_content_imports.py','wr_content_tools.py','wr_content_transaction.py','wr_content_physics.py','wr_content_updates.py','wr_content_sando.py','wr_content_reviewed.py','wr_content_cleanup.py','wr_content_steam.py','third_party_catalog.json','wr_menu_tables.py','wr_iostore_compress.py','app_release.json','official_catalog.json','official_database.json','physics_recipe.json','compatibility.json','INICIAR_GESTOR.bat']
 files=[(ROOT/name,name) for name in FILES]
 files.append((ROOT/'USER_GUIDE.txt','README.txt'))
 files += [(ROOT/'desktop-next/ACR Pak Manager.exe','desktop-bin/ACR Pak Manager.exe')]

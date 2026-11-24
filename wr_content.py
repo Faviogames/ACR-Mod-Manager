@@ -21,7 +21,7 @@ from wr_content_tools import ASSET_EXTS, MAIN, TABLES, Tools, asset_path
 from wr_menu_tables import (_rows, _row_map, _ownership, _by_table, _field, _references,
                             merge_menu_tables)
 
-REVISION = 3
+REVISION = 4
 NAME = 'pakchunk99-WrcgTables_P'
 EXTS = ('.pak', '.utoc', '.ucas')
 SCHEMA = 'stage-content/1'
@@ -272,7 +272,8 @@ class Manager:
                             owned = self.tools.listing(incoming/name)
                             if any(p in TABLES or Path(p).stem == 'DA_RacePenaltyDataFreePractice' for p in owned):
                                 raise ValueError('El pak de nivel también contiene tablas: ' + name)
-                            if any('acr/Content/Levels/'+track+'.umap' not in owned for track in package_tracks(data)):
+                            from wr_content_reviewed import level_paths
+                            if any(path not in owned for path in level_paths(data)):
                                 raise ValueError('El pak no contiene su nivel declarado')
                     previous = next((r for r in records if r['data']['id'] == data['id']), None)
                     if previous and previous['active'] and previous['data'] == data:
@@ -426,7 +427,9 @@ def package_tracks(data):
 
 def safe_asset(relative):
     value = asset_path(relative)
-    if not value.startswith('acr/Content/Data/UITextures/') or Path(value).suffix not in ASSET_EXTS:
+    from wr_content_reviewed import ui_packages
+    approved = str(Path(value).with_suffix('')).replace('\\','/') in ui_packages()
+    if (not value.startswith('acr/Content/Data/UITextures/') and not approved) or Path(value).suffix not in ASSET_EXTS:
         raise ValueError('Asset de menú no permitido: ' + value)
     return value
 

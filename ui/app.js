@@ -5,7 +5,10 @@ function filterStages(stages, filter, query) {
   return stages.filter(s => (filter === 'all' || (filter === 'active' ? s.active : !s.active)) &&
     normalise(`${s.name} ${s.country}`).includes(search));
 }
-if (typeof module !== 'undefined') module.exports = {filterStages, normalise};
+function isInGame(stage, scanned) {
+  return Boolean(scanned && stage.active && stage.valid && stage.compatible && stage.menu_ready);
+}
+if (typeof module !== 'undefined') module.exports = {filterStages, normalise, isInGame};
 if (typeof document !== 'undefined') boot();
 
 async function boot() {
@@ -95,7 +98,11 @@ async function boot() {
     $('hero-name').textContent=row.name; $('hero-country').textContent=countryName(row.country).toUpperCase() || t('TRAMO DE LA COMUNIDAD');
     document.querySelector('.hero-caption').textContent=row.preview_scope==='location'?t('IMAGEN DE LA UBICACIÓN'):t('TRAMO DE LA COMUNIDAD');
     $('hero-status').textContent=status(row);$('hero-status').className=`badge${!row.compatible?' warning':!row.active?' inactive':''}`;
-    $('hero-source').textContent=row.external?t('MOD EXTERNO'):'WRC GENERATIONS → ACR';
+    const ready=isInGame(row,state.scanned);
+    $('hero-active-badge').hidden=!ready; $('hero-status').hidden=ready;
+    $('hero-active-badge').alt=t('Mod activo: en el juego');
+    $('hero-active-badge').title=t('Mod activo: en el juego');
+    $('hero-source').textContent=(row.external || row.source_kind==='external')?t('MOD EXTERNO'):'WRC GENERATIONS → ACR';
     $('stage-version').textContent=message(row.version); $('stage-version').title=row.version;
     $('stage-size').textContent=size(row.size);$('stage-author').textContent=(row.author==='Comunidad' ? t('Comunidad') : message(row.author)) || t('Comunidad');
     $('description').textContent=(row.registration_required?message(row.description):row.description) || t('Este tramo aún no incluye una descripción.');

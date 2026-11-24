@@ -1,4 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
- <PropertyGroup><OutputType>WinExe</OutputType><TargetFramework>net10.0-windows</TargetFramework><UseWindowsForms>true</UseWindowsForms><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><AssemblyName>ACR-Mod-Manager-Setup</AssemblyName><Version>0.2.0</Version><ApplicationManifest>app.manifest</ApplicationManifest><ApplicationIcon>../ui/assets/app.ico</ApplicationIcon></PropertyGroup>
+ <PropertyGroup><OutputType>WinExe</OutputType><TargetFramework>net10.0-windows</TargetFramework><UseWindowsForms>true</UseWindowsForms><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><AssemblyName>ACR-Mod-Manager-Setup</AssemblyName><Version>0.2.1</Version><ApplicationManifest>app.manifest</ApplicationManifest><ApplicationIcon>../ui/assets/app.ico</ApplicationIcon></PropertyGroup>
  <ItemGroup><EmbeddedResource Include="../dist/payload.zip" LogicalName="payload.zip" /></ItemGroup>
 <ItemGroup><Compile Include="../shared/InstalledLayout.cs" Link="InstalledLayout.cs" /></ItemGroup></Project>
