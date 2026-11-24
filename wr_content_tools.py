@@ -1,3 +1,4 @@
+import wr_content_transaction as tx
 """Only subprocesses and standard Python; never imports the frozen exporter."""
 from contextlib import contextmanager
 import hashlib
@@ -122,7 +123,7 @@ class Tools:
         # This folder belongs to this operation and is outside the game's Paks.
         parent = Path(self.config.get('native_cache', self.stock.parents[2]/'StageContentNative'))
         parent.mkdir(parents=True, exist_ok=True)
-        with tempfile.TemporaryDirectory(dir=parent, prefix='catalog-') as temp:
+        with tx.temporary_directory(parent, prefix='catalog-') as temp:
             view = Path(temp)
             for toc in catalogs:
                 for ext in ('.utoc', '.ucas'):

@@ -13,4 +13,4 @@ $installerPath = Join-Path $managerRoot 'dist/ACR-Mod-Manager-Setup.exe'
 Copy-Item -LiteralPath (Join-Path $managerRoot 'dist/setup/ACR-Mod-Manager-Setup.exe') -Destination $installerPath -Force
 $installerHash = (Get-FileHash -LiteralPath $installerPath -Algorithm SHA256).Hash.ToLowerInvariant()
 "$installerHash  ACR-Mod-Manager-Setup.exe" | Set-Content -LiteralPath (Join-Path $managerRoot 'dist/SHA256SUMS.txt') -Encoding ascii
-Write-Output "Built ACR Mod Manager $appVersion : $installerHash"
+Write-Output "Built ACR Pak Manager $appVersion : $installerHash"

@@ -1,3 +1,4 @@
+import wr_content_transaction as tx
 """Official stage catalogue + local adoption database. Users need no sidecars.
 
 Only addon rows are recovered from existing menus. Native baseline tables are
@@ -163,6 +164,8 @@ def cached_record(manager, folder, toc, identity):
 
 
 def adopt_installed(manager, identity):
+    from wr_content_sando import adopt_installed as adopt_sando
+    adopt_sando(manager, identity)
     catalog=official_catalog()
     if not catalog:
         return
@@ -205,7 +208,7 @@ def adopt_installed(manager, identity):
     for folder in manager.config.get('menu_sources',[]):
         sources.extend(p for p in Path(folder).glob('*.utoc') if is_menu(p.stem))
     missing={track for _,_,track,_ in pending}
-    with tempfile.TemporaryDirectory(dir=manager.state,prefix='adopt-') as temp:
+    with tx.temporary_directory(manager.state,prefix='adopt-') as temp:
         scratch=Path(temp)
         for i,source in enumerate(sources):
             destination=scratch/str(i);destination.mkdir()

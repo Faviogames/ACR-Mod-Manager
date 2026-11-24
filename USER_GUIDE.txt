@@ -1,11 +1,12 @@
-ACR MOD MANAGER
+ACR PAK MANAGER
 
 ENGLISH
 Run ACR-Mod-Manager-Setup.exe. It installs for your Windows user and creates a
 Start menu shortcut. Run the newer installer with the app closed to update it;
 your game path, language and manager data stay separate from app versions.
 
-1. Select your Assetto Corsa Rally folder on first launch.
+1. Steam libraries are detected on first launch. If needed, select your Steam
+   folder; selecting the game folder remains an advanced fallback.
 2. Put the complete .pak/.utoc/.ucas set of each supported stage in the mods folder.
 3. Click Scan when you want to check the folder and prepare its game menu.
 4. Enable/Disable applies immediately, with ACR closed. Disabled stages are kept.
@@ -27,7 +28,9 @@ Ejecuta ACR-Mod-Manager-Setup.exe. Instala para tu usuario y crea un acceso en
 Inicio. Para actualizar, cierra la app y ejecuta el nuevo instalador; conserva
 la configuración y los datos del gestor fuera de las carpetas de versiones.
 
-Elige la carpeta de ACR, copia cada conjunto completo .pak/.utoc/.ucas y pulsa
+La app busca ACR en las bibliotecas de Steam. Si hace falta, indica la carpeta
+de Steam; elegir directamente ACR queda como alternativa avanzada.
+Copia cada conjunto completo .pak/.utoc/.ucas y pulsa
 Escanear cuando quieras revisar los tramos. Activar/desactivar se aplica al
 momento, con el juego cerrado; los tramos desactivados se conservan.
 Los mods desconocidos se marcan No soportado. Los conflictos indican el paquete.
@@ -42,3 +45,17 @@ The first extraction needs Internet: retoc fetches its compression library and
 checks its SHA256. That library is not redistributed in this installer.
 La primera extracción necesita Internet: retoc obtiene su biblioteca de
 compresión y verifica su SHA256; el instalador no la redistribuye.
+
+Storage / Almacenamiento
+After a successful synchronization, automatic cleanup retains the latest three
+eligible menu backups by default. The 512 MB budget never overrides protected
+backups. Pinned, interrupted, unrecognized and level backups are preserved.
+Only abandoned, marked application temporaries older than 24 hours are eligible.
+Game files, user mods, disabled stages and exporter work/ are excluded.
+Tras sincronizar correctamente, la limpieza conserva por defecto los tres
+ultimos respaldos de menu validos. El presupuesto de 512 MB respeta siempre los
+respaldos protegidos. Conserva los fijados, interrumpidos, desconocidos y niveles.
+Solo retira temporales propios identificados, abandonados hace mas de 24 horas.
+No elimina archivos del juego, mods, tramos desactivados ni work/ del exportador.
+Advanced configuration: cleanup.enabled, keep_backups, max_backup_mb,
+temp_max_age_hours and pinned_journals (inside the cleanup object).

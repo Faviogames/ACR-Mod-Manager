@@ -1,0 +1,85 @@
+{
+  "schema": "reviewed-packages/1",
+  "packages": {
+    "sando_cl_biobio": {
+      "version": "0.4.4",
+      "files": {
+        "pakchunk99-ChileBioBio_P.pak": {
+          "size": 347,
+          "sha256": "75e7144577253917f6da7312ef5e585b12fb728226a22b0938323751a6b555cd"
+        },
+        "pakchunk99-ChileBioBio_P.utoc": {
+          "size": 1563359,
+          "sha256": "56aef97199966dba85d93ca7dcbba78f39e0ee7d3eaabc7933c0176511c77d05"
+        },
+        "pakchunk99-ChileBioBio_P.ucas": {
+          "size": 4235404524,
+          "sha256": "078acbbf26549601e49d80d6d1968bab8135117ab5c6489b6f1d51a39e311ea6"
+        }
+      },
+      "tracks": [
+        "SandoChlBio",
+        "SandoChlBioRev"
+      ],
+      "compatible_schemas": [
+        "acr-26756580"
+      ],
+      "companion": {
+        "pakchunk99-SandoRegistry_2_P.pak": {
+          "size": 347,
+          "sha256": "75e7144577253917f6da7312ef5e585b12fb728226a22b0938323751a6b555cd"
+        },
+        "pakchunk99-SandoRegistry_2_P.ucas": {
+          "size": 1832148,
+          "sha256": "2a59a8c485be8610de64f1521042d967f9c63c808ca2c343d24c828375df3b50"
+        },
+        "pakchunk99-SandoRegistry_2_P.utoc": {
+          "size": 1606,
+          "sha256": "7746e6058e041b9d1241c543bf4d3aa95b1f7c086ca8d93306fc77cb15022338"
+        }
+      },
+      "credits": [
+        {
+          "what": "stage",
+          "who": "Sando Rally (https://sandorally.com)"
+        },
+        {
+          "what": "road line",
+          "who": "OpenStreetMap contributors",
+          "licence": "ODbL 1.0",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        {
+          "what": "elevation",
+          "who": "Copernicus GLO-30 (DLR e.V., Airbus Defence and Space GmbH; European Union, ESA)"
+        },
+        {
+          "what": "land cover",
+          "who": "ESA WorldCover project 2021 (Copernicus Sentinel data)",
+          "licence": "CC BY 4.0",
+          "url": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "what": "elevation checks",
+          "who": "SRTM (U.S. Geological Survey; AWS Terrain Tiles, Mapzen)"
+        },
+        {
+          "what": "textures",
+          "who": "Poly Haven (Amal Kumar, Charlotte Baglioni, Dario Barresi, Greg Zaal, Rob Tuytel)",
+          "licence": "CC0 1.0",
+          "url": "https://polyhaven.com"
+        },
+        {
+          "what": "plants, rocks, props, shaders",
+          "who": "Assetto Corsa Rally (referenced from the player's own game, not included)"
+        }
+      ],
+      "licence": {
+        "file": "LICENSE.txt",
+        "summary": "free download from SandoRally.com for personal play; no selling or paywalls; no changes, conversions or reuse without written permission",
+        "draft": false
+      },
+      "stem": "pakchunk99-ChileBioBio_P"
+    }
+  }
+}

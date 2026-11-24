@@ -21,7 +21,7 @@ from wr_content_tools import ASSET_EXTS, MAIN, TABLES, Tools, asset_path
 from wr_menu_tables import (_rows, _row_map, _ownership, _by_table, _field, _references,
                             merge_menu_tables)
 
-REVISION = 2
+REVISION = 3
 NAME = 'pakchunk99-WrcgTables_P'
 EXTS = ('.pak', '.utoc', '.ucas')
 SCHEMA = 'stage-content/1'
@@ -119,7 +119,7 @@ class Manager:
         if path.is_symlink() or path.stat().st_size > MAX_MANIFEST:
             raise ValueError('Manifiesto demasiado grande o enlazado: ' + str(path))
         data = read(path)
-        if data.get('schema') != SCHEMA or data.get('producer') != 'StageExporter':
+        if data.get('schema') != SCHEMA or data.get('producer') not in ('StageExporter', 'SandoRallyReviewed'):
             raise ValueError('Manifiesto no reconocido: ' + str(path))
         if not re.fullmatch(r'[a-z0-9]+_[a-z0-9_]+', data.get('id', '')):
             raise ValueError('Identificador de autor/tramo inválido')
@@ -129,7 +129,13 @@ class Manager:
             raise ValueError('Tramo incompatible con el juego actual: ' + data['id'])
         files = data.get('files', {})
         stem = path.name.removesuffix('.stage.json')
-        if not re.fullmatch(r'pakchunk99-Wrcg[A-Za-z0-9_]+_P', stem) or stem == NAME:
+        if data.get('producer') == 'SandoRallyReviewed':
+            from wr_content_sando import validate_reviewed
+            known = validate_reviewed(data)
+            valid_stem = stem == known['stem']
+        else:
+            valid_stem = bool(re.fullmatch(r'pakchunk99-Wrcg[A-Za-z0-9_]+_P', stem)) and stem != NAME
+        if not valid_stem:
             raise ValueError('Nombre de paquete inválido')
         if set(files) != {stem+ext for ext in EXTS}:
             raise ValueError('El manifiesto no describe exactamente su conjunto pak/utoc/ucas')
@@ -145,7 +151,7 @@ class Manager:
         if not tables or any(MAIN+p not in TABLES for p in tables):
             raise ValueError('Tabla no admitida en el manifiesto')
         track = data.get('track')
-        if track not in _row_map(tables, 'DT_Tracks'):
+        if track not in package_tracks(data) or set(package_tracks(data)) != set(_row_map(tables, 'DT_Tracks')):
             raise ValueError('El manifiesto no registra su tramo')
         for asset in tables.values():
             if len({r['Name'].casefold() for r in _rows(asset)}) != len(_rows(asset)):
@@ -177,7 +183,7 @@ class Manager:
                     data = self.load_manifest(path, identity, require_compatible=False, files_root=folder)
                     if folder == self.mods and data['id'] not in disabling and identity['schema'] not in data['compatible_schemas']:
                         raise ValueError('Tramo incompatible con el juego actual: ' + data['id'])
-                    if data['id'].casefold() in ids or data['track'].casefold() in tracks:
+                    if data['id'].casefold() in ids or any(t.casefold() in tracks for t in package_tracks(data)):
                         raise ValueError('Colisión de identificador o nivel: ' + data['id'])
                 except (ValueError, OSError) as exc:
                     if errors is None:
@@ -185,7 +191,7 @@ class Manager:
                     errors.append((folder, path.name.removesuffix('.stage.json'), str(exc)))
                     continue
                 ids.add(data['id'].casefold())
-                tracks.add(data['track'].casefold())
+                tracks.update(t.casefold() for t in package_tracks(data))
                 result.append(dict(path=path, folder=folder, internal=internal, data=data, active=folder == self.mods))
         known = {name for r in result if r['active'] for name in r['data']['files']}
         for path in self.mods.iterdir():
@@ -202,12 +208,16 @@ class Manager:
         roots = [self.mods]
         if self.mods.is_relative_to(self.tools.stock):
             roots = [self.tools.stock]
+        from wr_content_sando import companion_paths
+        reviewed_menus = companion_paths(self, records)
         for root in roots:
             for path in sorted(root.rglob('*.utoc')):
                 if path.parent == self.tools.stock and (path.name == 'global.utoc' or
                         re.fullmatch(r'pakchunk\d+(?:optional)?-Windows\.utoc', path.name, re.I)):
                     continue
                 if is_menu(path.stem) and path.parent == self.mods:
+                    continue
+                if path.resolve() in reviewed_menus:
                     continue
                 files = self.tools.listing(path)
                 clashes = [p for p in files if p in TABLES or Path(p).stem == 'DA_RacePenaltyDataFreePractice']
@@ -230,7 +240,7 @@ class Manager:
             raise ValueError('Seleccionar tramos solo está permitido para exportar tablas sin instalar')
         if incoming and toggle:
             raise ValueError('Instala o cambia el estado en operaciones separadas')
-        with tx.profile_lock(self.mods), tempfile.TemporaryDirectory(dir=self.state,prefix='incoming-') as incoming_temp:
+        with tx.profile_lock(self.mods), tx.temporary_directory(self.state,prefix='incoming-') as incoming_temp:
             tx.recover_pending(self.state, self.roots, running, snapshots=self.snapshots)
             identity = self.identity()
             from wr_content_catalog import adopt_installed
@@ -255,14 +265,14 @@ class Manager:
                 for path in manifests:
                     data = self.load_manifest(path, identity,files_root=incoming)
                     if any(r['data']['id'].casefold() == data['id'].casefold() or
-                           r['data']['track'].casefold() == data['track'].casefold() for r in additions):
+                           set(t.casefold() for t in package_tracks(r['data'])) & set(t.casefold() for t in package_tracks(data)) for r in additions):
                         raise ValueError('Tramos duplicados en la carpeta de entrada')
                     for name in data['files']:
                         if name.endswith('.utoc'):
                             owned = self.tools.listing(incoming/name)
                             if any(p in TABLES or Path(p).stem == 'DA_RacePenaltyDataFreePractice' for p in owned):
                                 raise ValueError('El pak de nivel también contiene tablas: ' + name)
-                            if 'acr/Content/Levels/'+data['track']+'.umap' not in owned:
+                            if any('acr/Content/Levels/'+track+'.umap' not in owned for track in package_tracks(data)):
                                 raise ValueError('El pak no contiene su nivel declarado')
                     previous = next((r for r in records if r['data']['id'] == data['id']), None)
                     if previous and previous['active'] and previous['data'] == data:
@@ -271,7 +281,7 @@ class Manager:
                         for name in record_files(previous):
                             movement[previous.get('folder', previous['path'].parent)/name] = None
                         records.remove(previous)
-                    if any(r['data']['track'].casefold() == data['track'].casefold() for r in records):
+                    if any(set(t.casefold() for t in package_tracks(r['data'])) & set(t.casefold() for t in package_tracks(data)) for r in records):
                         raise ValueError('Otro autor ya registra ese nivel: ' + data['track'])
                     for name in [*data['files']]+([] if internal_incoming else [path.name]):
                         destination = self.mods/name
@@ -302,8 +312,8 @@ class Manager:
             active = sorted((r for r in records if r['active']), key=lambda r: r['data']['id'])
             if tracks is not None:
                 tracks = set(tracks)
-                active = [r for r in active if r['data']['track'] in tracks]
-                missing = tracks - {r['data']['track'] for r in active}
+                active = [r for r in active if set(package_tracks(r['data'])) & tracks]
+                missing = tracks - {t for r in active for t in package_tracks(r['data'])}
                 if missing:
                     raise ValueError('Faltan manifiestos instalados para: ' + ', '.join(sorted(missing)))
             signature = digest(dict(revision=REVISION, game=identity,
@@ -314,12 +324,13 @@ class Manager:
                     all((self.mods/name).is_file() and self.hashes.file(self.mods/name) == value
                         for name, value in installed.get('files', {}).items()) and installed.get('files')):
                 self.hashes.save()
+                self.cleanup(running=running)
                 self.log('Sin cambios: no se reconstruyen tablas')
                 return {'changed': False, 'stages': [r['data']['id'] for r in active]}
             if not output and running():
                 self.hashes.save()
                 raise RuntimeError('Actualización pendiente: cierra ACR y vuelve a sincronizar')
-            with tempfile.TemporaryDirectory(dir=self.state, prefix='build-') as temp:
+            with tx.temporary_directory(self.state, prefix='build-') as temp:
                 scratch = Path(temp)
                 native = scratch/'native'
                 baseline, penalty = self.tools.extract_stock(native, scratch)
@@ -330,7 +341,7 @@ class Manager:
                     if any(relative not in merged for relative in data['tables']):
                         raise ValueError('El juego actual no contiene todas las tablas que necesita este tramo')
                     check_collisions(merged, data['tables'])
-                    merged, _ = merge_menu_tables(merged, data['tables'], [data['track']])
+                    merged, _ = merge_menu_tables(merged, data['tables'], package_tracks(data))
                     for relative, record in data.get('assets', {}).items():
                         if relative in assets and assets[relative] != record:
                             raise ValueError('Colisión de imagen de menú: ' + relative)
@@ -348,7 +359,7 @@ class Manager:
                     path = legacy/safe_asset(relative)
                     path.parent.mkdir(parents=True, exist_ok=True)
                     path.write_bytes(base64.b64decode(record['data'], validate=True))
-                if active:
+                if any(r['data'].get('producer') == 'StageExporter' for r in active):
                     from wr_content_physics import build_shared
                     build_shared(self,legacy,scratch)
                 package = scratch/'package'
@@ -375,6 +386,9 @@ class Manager:
                 for path in self.mods.iterdir():
                     if path.suffix in EXTS and is_menu(path.stem) and path.name not in files:
                         changes[path] = None
+                from wr_content_sando import companion_paths
+                for path in companion_paths(self, records):
+                    changes[path] = None
                 changes.update(movement)
                 for record in records:
                     if record.get('internal') and record['path'].parent==Path(incoming_temp):
@@ -384,12 +398,30 @@ class Manager:
                                      and (not incoming or source_stamp == inventory_stamp(incoming)))
                 journal = tx.publish(changes, self.state, self.roots, unchanged, running, hash_file=self.hashes.file, snapshots=self.snapshots)
                 self.hashes.save()
+                self.cleanup(running=running)
                 self.log('Tablas instaladas; respaldo: ' + str(journal))
                 return dict(changed=True, journal=str(journal), **desired)
+
+    def cleanup(self, *, running=tx.game_running):
+        try:
+            from wr_content_cleanup import cleanup_locked
+            report = cleanup_locked(self, running=running)
+            count = report['removed_backups'] + report['removed_temporaries']
+            if count: self.log('Automatic cleanup: '+str(count)+' obsolete backup/temporary folders removed')
+            for warning in report['warnings']: self.log('Cleanup: '+warning)
+        except Exception as error:
+            self.log('Cleanup deferred; installed mods are unchanged: '+str(error))
 
     def stock_stamp(self):
         return {p.name: [p.stat().st_size, p.stat().st_mtime_ns] for p in self.tools.stock.glob('*')
                 if p.is_file() and p.suffix in ('.utoc', '.ucas', '.pak')}
+
+
+def package_tracks(data):
+    tracks = data.get('tracks', [data.get('track')])
+    if not isinstance(tracks, list) or not tracks or any(not isinstance(t, str) or not re.fullmatch(r'[A-Za-z0-9_]+', t) for t in tracks) or len({t.casefold() for t in tracks}) != len(tracks):
+        raise ValueError('Lista de tramos del paquete no válida')
+    return tracks
 
 
 def safe_asset(relative):
@@ -477,7 +509,7 @@ def register(manager, *, legacy, pak, track, stage_id, version, built_with, pena
     identity = manager.identity()
     if built_with != identity['schema']:
         raise ValueError('No se puede certificar un pak de otra build sin migración validada')
-    with tempfile.TemporaryDirectory(dir=manager.state, prefix='register-') as temp:
+    with tx.temporary_directory(manager.state, prefix='register-') as temp:
         scratch = Path(temp)
         tables = {}
         for relative in sorted(TABLES):

@@ -13,6 +13,31 @@ import re
 from pathlib import Path
 import shutil
 import subprocess
+import tempfile
+
+
+def pid_alive(pid):
+    if pid <= 0: return True
+    if os.name != 'nt':
+        try: os.kill(pid, 0); return True
+        except ProcessLookupError: return False
+        except PermissionError: return True
+    kernel = ctypes.WinDLL('kernel32', use_last_error=True)
+    kernel.OpenProcess.restype = ctypes.c_void_p
+    kernel.CloseHandle.argtypes = [ctypes.c_void_p]
+    kernel.WaitForSingleObject.argtypes = [ctypes.c_void_p, ctypes.c_uint32]
+    handle = kernel.OpenProcess(0x100000, False, pid)
+    if not handle: return ctypes.get_last_error() != 87
+    try: return kernel.WaitForSingleObject(handle, 0) == 258
+    finally: kernel.CloseHandle(handle)
+
+
+@contextmanager
+def temporary_directory(parent, *, prefix):
+    with tempfile.TemporaryDirectory(dir=parent, prefix=prefix) as folder:
+        path = Path(folder).resolve()
+        save(path/'.acr-manager-temp.json', dict(schema='acr-manager-temp/1', pid=os.getpid(), directory=str(path)))
+        yield folder
 
 
 def sha(path):
@@ -147,7 +172,7 @@ def publish(changes, state_dir, roots, unchanged, running=game_running, replace=
     folder = Path(state_dir) / 'backups' / os.urandom(8).hex()
     folder.mkdir(parents=True)
     journal = folder / 'journal.json'
-    state = {'status': 'preparing', 'files': []}
+    state = {'owner': 'acr-content-manager/1', 'status': 'preparing', 'files': []}
     staged = []
     deletions={Path(target).resolve() for target,source in changes.items() if source is None}
     try:
