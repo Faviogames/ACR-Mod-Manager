@@ -18,3 +18,9 @@ official_database.json
 *.pak
 *.utoc
 *.ucas
+
+archive/
+data/
+portugal-*-report.json
+
+LEEME_LOCAL.txt

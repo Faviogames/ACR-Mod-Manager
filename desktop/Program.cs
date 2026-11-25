@@ -105,10 +105,14 @@ internal sealed class ContentWindow : Form
             {
                 var python = Path.Combine(root, "python", "python.exe");
                 if (!File.Exists(python)) throw new IOException(Program.T("Falta el runtime Python independiente del gestor."));
-                var start = new ProcessStartInfo(python) { WorkingDirectory = root, UseShellExecute = false, CreateNoWindow = true };
+                var start = new ProcessStartInfo(python) { WorkingDirectory = root, UseShellExecute = false, CreateNoWindow = true, RedirectStandardError = true };
                 start.ArgumentList.Add(Path.Combine(root, "wr_content_app.py")); start.ArgumentList.Add("--config"); start.ArgumentList.Add(config);
                 if (noSync) start.ArgumentList.Add("--no-sync");
-                worker = Process.Start(start) ?? throw new IOException(Program.T("No se pudo iniciar el motor local."));
+                var logFile = Path.Combine(data, "startup-error.log");
+                worker = new Process { StartInfo = start };
+                worker.ErrorDataReceived += (_, e) => { if (e.Data != null) try { File.AppendAllText(logFile, e.Data + Environment.NewLine); } catch (IOException) { } };
+                if (!worker.Start()) throw new IOException(Program.T("No se pudo iniciar el motor local."));
+                worker.BeginErrorReadLine();
                 for (int i = 0; i < 60 && !await ReadRuntime(); i++) { if (worker.HasExited) throw new IOException(Program.T("El motor local no pudo iniciarse.")); await Task.Delay(200); }
                 if (origin.Length == 0) throw new IOException(Program.T("El motor local no respondió a tiempo."));
             }

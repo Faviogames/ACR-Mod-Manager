@@ -21,7 +21,7 @@ from wr_content_tools import ASSET_EXTS, MAIN, TABLES, Tools, asset_path
 from wr_menu_tables import (_rows, _row_map, _ownership, _by_table, _field, _references,
                             merge_menu_tables)
 
-REVISION = 4
+REVISION = 6
 NAME = 'pakchunk99-WrcgTables_P'
 EXTS = ('.pak', '.utoc', '.ucas')
 SCHEMA = 'stage-content/1'
@@ -243,6 +243,8 @@ class Manager:
         with tx.profile_lock(self.mods), tx.temporary_directory(self.state,prefix='incoming-') as incoming_temp:
             tx.recover_pending(self.state, self.roots, running, snapshots=self.snapshots)
             identity = self.identity()
+            from wr_content_presentation import snapshot, retain_installed
+            previous_presentation=snapshot(self,identity)
             from wr_content_catalog import adopt_installed
             adopt_installed(self, identity)
             disabling = set(deactivate) | ({toggle[0]} if toggle and not toggle[1] else set())
@@ -328,6 +330,10 @@ class Manager:
                 self.cleanup(running=running)
                 self.log('Sin cambios: no se reconstruyen tablas')
                 return {'changed': False, 'stages': [r['data']['id'] for r in active]}
+            retain_installed(self,active,previous_presentation)
+            signature = digest(dict(revision=REVISION, game=identity,
+                                    physics=tx.sha(Path(__file__).resolve().parent/'physics_recipe.json'),
+                                    manifests=[r['data'] for r in active]))
             if not output and running():
                 self.hashes.save()
                 raise RuntimeError('Actualización pendiente: cierra ACR y vuelve a sincronizar')
@@ -394,6 +400,11 @@ class Manager:
                 for record in records:
                     if record.get('internal') and record['path'].parent==Path(incoming_temp):
                         changes[self.state/'catalog'/record['path'].name]=record['path']
+                for record in records:
+                    if record.get('internal') and record.get('_presentation_changed'):
+                        prepared=scratch/'presentation-records'/record['path'].name
+                        tx.save(prepared,record['data'])
+                        changes[self.state/'catalog'/record['path'].name]=prepared
                 changes[self.state/'installed.json'] = scratch/'installed.json'
                 unchanged = lambda: (before == (inventory_stamp(self.mods), inventory_stamp(self.disabled), self.stock_stamp())
                                      and (not incoming or source_stamp == inventory_stamp(incoming)))

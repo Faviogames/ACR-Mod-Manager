@@ -6,6 +6,10 @@ Manage supported community stages for Assetto Corsa Rally without Stage Exporter
 
 [Roadmap](ROADMAP.md) â€” storage, compatibility and future improvements.
 
+## Update 0.2.2
+
+Fixes Portugal stage artwork and descriptions, cached presentation refresh and old placeholder references. After updating, click **Scan with ACR closed**; stage re-export is not required. Real user presentation edits are retained; native baseline tables still come from the installed game.
+
 ## Get started
 
 1. Install and open ACR Pak Manager. Steam libraries are detected automatically; if necessary, select your Steam folder. Selecting the game folder remains an advanced fallback.
@@ -39,8 +43,8 @@ The interface now has a larger logo, cyan PAK lettering and an adapted **MOD ACT
 
 The installer no longer keeps a complete copy of itself as the launcher. The
 stable launcher shares the native application file using a hard link when
-supported. A clean 0.2.1 payload contains **312,787,265 bytes (about 298 MiB)**;
-the download is **224,435,849 bytes (about 214 MiB)**. User data, WebView2 cache,
+supported. A clean 0.2.2 payload contains **371,296,684 bytes (about 354 MiB)**;
+the download is **266,183,817 bytes (about 254 MiB)**. User data, WebView2 cache,
 backups and a previous installed version are additional. Previous installations
 are retained for recovery; unknown legacy files are not deleted automatically.
 This is an installed-space saving, not a small network/bootstrap installer.
@@ -77,8 +81,8 @@ The interface now has a larger logo, cyan PAK lettering and an adapted **MOD ACT
 
 The installer no longer keeps a complete copy of itself as the launcher. The
 stable launcher shares the native application file using a hard link when
-supported. A clean 0.2.1 payload contains **312,787,265 bytes (about 298 MiB)**;
-the download is **224,435,849 bytes (about 214 MiB)**. User data, WebView2 cache,
+supported. A clean 0.2.2 payload contains **371,296,684 bytes (about 354 MiB)**;
+the download is **266,183,817 bytes (about 254 MiB)**. User data, WebView2 cache,
 backups and a previous installed version are additional. Previous installations
 are retained for recovery; unknown legacy files are not deleted automatically.
 This is an installed-space saving, not a small network/bootstrap installer.
@@ -107,8 +111,10 @@ Use **Submit a mod** in the app for the request template. Contact **faviogames**
 
 ## Source and builds
 
-This repository contains the manager engine, web interface, native host, installer and build scripts. The curated runtime catalogue `official_database.json` and tool binaries are supplied in the installer, not committed to Git. To rebuild, copy `official_database.json`, `python/`, and `bin/` from an installed release next to these sources, install the .NET 10 SDK, then run `powershell -ExecutionPolicy Bypass -File build_installer.ps1`. NuGet restores WebView2 from its official feed. Do not add your game files, local profiles, backups or private caches to Git.
+This repository contains the manager engine, web interface, native host, installer and build scripts. The curated runtime catalogue `official_database.json` and tool binaries are supplied in the installer, not committed to Git. To rebuild, copy `official_database.json`, `official_presentation.json`, `python/`, and `bin/` from an installed release next to these sources, install the .NET 10 SDK, then run `powershell -ExecutionPolicy Bypass -File build_installer.ps1`. NuGet restores WebView2 from its official feed. Do not add your game files, local profiles, backups or private caches to Git.
 
-Checks: `python/python.exe -m unittest test_content test_content_app test_manual_and_backups test_updates test_discovery_cleanup test_brand_assets test_reviewed_paths` and `node --test test_ui.cjs`. The installer also supports `--self-test <absolute-report-path>` for isolated extraction and persistence checks; this does not replace an in-game test.
+Checks: `python/python.exe -m unittest test_content test_content_app test_manual_and_backups test_updates test_discovery_cleanup test_brand_assets test_reviewed_paths test_presentation` and `node --test test_ui.cjs`. The installer also supports `--self-test <absolute-report-path>` for isolated extraction and persistence checks; this does not replace an in-game test.
 
 Third-party notices are in [licenses](licenses/). Game names and trademarks belong to their respective owners. This project is independent of the game developers.
+
+Developer presentation refresh: run `prepare_official_catalog.py --exporter <exporter-root>` and `build_official_database.py --exporter <exporter-root> --worker <isolated-worker.exe>`. Copy `developer/_cm_cook_authored.py` into the isolated worker's `_internal/` first. No exporter work cache or game paks are modified by this authored-art build. `official_presentation.json` carries definition revisions; the developer worker is never part of the standalone runtime.

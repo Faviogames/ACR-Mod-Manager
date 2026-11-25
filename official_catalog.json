@@ -32,7 +32,8 @@
       "country": "España",
       "level": "/Game/Levels/WrcgEsSS1",
       "variant": "WrcgEsSS1Full",
-      "preview": "art/WrcgEsSS1.png"
+      "preview": "art/98fba378d20263ae4d148359210b2b6a0bde71010befc8f273ecc533702a3089.png",
+      "preview_sha256": "98fba378d20263ae4d148359210b2b6a0bde71010befc8f273ecc533702a3089"
     },
     "WrcgEsSS1R": {
       "id": "favio_es_ss1r",
@@ -41,7 +42,8 @@
       "country": "España",
       "level": "/Game/Levels/WrcgEsSS1R",
       "variant": "WrcgEsSS1RFull",
-      "preview": "art/WrcgEsSS1R.png"
+      "preview": "art/98fba378d20263ae4d148359210b2b6a0bde71010befc8f273ecc533702a3089.png",
+      "preview_sha256": "98fba378d20263ae4d148359210b2b6a0bde71010befc8f273ecc533702a3089"
     },
     "WrcgEsSS4": {
       "id": "favio_es_ss4",
@@ -50,7 +52,8 @@
       "country": "España",
       "level": "/Game/Levels/WrcgEsSS4",
       "variant": "WrcgEsSS4Full",
-      "preview": "art/WrcgEsSS4.png"
+      "preview": "art/ea83a18d6db5463b30a0736d779b201072cab663312c86a0af5519b8de23aece.png",
+      "preview_sha256": "ea83a18d6db5463b30a0736d779b201072cab663312c86a0af5519b8de23aece"
     },
     "WrcgEsSS4R": {
       "id": "favio_es_ss4r",
@@ -59,7 +62,8 @@
       "country": "España",
       "level": "/Game/Levels/WrcgEsSS4R",
       "variant": "WrcgEsSS4RFull",
-      "preview": "art/WrcgEsSS4R.png"
+      "preview": "art/ea83a18d6db5463b30a0736d779b201072cab663312c86a0af5519b8de23aece.png",
+      "preview_sha256": "ea83a18d6db5463b30a0736d779b201072cab663312c86a0af5519b8de23aece"
     },
     "WrcgFrSS1": {
       "id": "favio_fr_ss1",
@@ -124,7 +128,8 @@
       "country": "Kenia",
       "level": "/Game/Levels/WrcgKeSS1",
       "variant": "WrcgKeSS1Full",
-      "preview": "art/WrcgKeSS1.png"
+      "preview": "art/dc9ed39038bca790ae72621cc4df1ca1efc51a889d151aad3ea3dc0aa77ee993.png",
+      "preview_sha256": "dc9ed39038bca790ae72621cc4df1ca1efc51a889d151aad3ea3dc0aa77ee993"
     },
     "WrcgKeSS1R": {
       "id": "favio_ke_ss1r",
@@ -133,7 +138,8 @@
       "country": "Kenia",
       "level": "/Game/Levels/WrcgKeSS1R",
       "variant": "WrcgKeSS1RFull",
-      "preview": "art/WrcgKeSS1R.png"
+      "preview": "art/dc9ed39038bca790ae72621cc4df1ca1efc51a889d151aad3ea3dc0aa77ee993.png",
+      "preview_sha256": "dc9ed39038bca790ae72621cc4df1ca1efc51a889d151aad3ea3dc0aa77ee993"
     },
     "WrcgKeSS2": {
       "id": "favio_ke_ss2",
@@ -142,7 +148,8 @@
       "country": "Kenia",
       "level": "/Game/Levels/WrcgKeSS2",
       "variant": "WrcgKeSS2Full",
-      "preview": "art/WrcgKeSS2.png"
+      "preview": "art/7e392f211085f9085b82b279fed43547228562afcd4c9c4d8cf1c36f7b388a19.png",
+      "preview_sha256": "7e392f211085f9085b82b279fed43547228562afcd4c9c4d8cf1c36f7b388a19"
     },
     "WrcgKeSS2R": {
       "id": "favio_ke_ss2r",
@@ -151,7 +158,8 @@
       "country": "Kenia",
       "level": "/Game/Levels/WrcgKeSS2R",
       "variant": "WrcgKeSS2RFull",
-      "preview": "art/WrcgKeSS2R.png"
+      "preview": "art/7e392f211085f9085b82b279fed43547228562afcd4c9c4d8cf1c36f7b388a19.png",
+      "preview_sha256": "7e392f211085f9085b82b279fed43547228562afcd4c9c4d8cf1c36f7b388a19"
     },
     "WrcgMxES1": {
       "id": "favio_mx_es1",
@@ -191,7 +199,9 @@
       "name": "Arganil",
       "country": "Portugal",
       "level": "/Game/Levels/WrcgPtSS4",
-      "variant": "WrcgPtSS4Full"
+      "variant": "WrcgPtSS4Full",
+      "preview": "art/cc03d7c6785844a06330b22627e3f708537e51133425c5f084183f4986c6e409.png",
+      "preview_sha256": "cc03d7c6785844a06330b22627e3f708537e51133425c5f084183f4986c6e409"
     },
     "WrcgSeSS3": {
       "id": "favio_se_ss3",
@@ -399,7 +409,9 @@
       "name": "Felgueiras",
       "country": "Portugal",
       "level": "/Game/Levels/WrcgPtSS3",
-      "variant": "WrcgPtSS3Full"
+      "variant": "WrcgPtSS3Full",
+      "preview": "art/47e01ddd8125e8f6fd5a82303d495df605e1956f54a4568bbebe45e4037c3c50.png",
+      "preview_sha256": "47e01ddd8125e8f6fd5a82303d495df605e1956f54a4568bbebe45e4037c3c50"
     },
     "WrcgPtSS3R": {
       "id": "favio_pt_ss3r",
@@ -407,7 +419,9 @@
       "name": "Felgueiras reverse",
       "country": "Portugal",
       "level": "/Game/Levels/WrcgPtSS3R",
-      "variant": "WrcgPtSS3RFull"
+      "variant": "WrcgPtSS3RFull",
+      "preview": "art/47e01ddd8125e8f6fd5a82303d495df605e1956f54a4568bbebe45e4037c3c50.png",
+      "preview_sha256": "47e01ddd8125e8f6fd5a82303d495df605e1956f54a4568bbebe45e4037c3c50"
     },
     "WrcgPtSS4R": {
       "id": "favio_pt_ss4r",
@@ -415,7 +429,9 @@
       "name": "Arganil reverse",
       "country": "Portugal",
       "level": "/Game/Levels/WrcgPtSS4R",
-      "variant": "WrcgPtSS4RFull"
+      "variant": "WrcgPtSS4RFull",
+      "preview": "art/cc03d7c6785844a06330b22627e3f708537e51133425c5f084183f4986c6e409.png",
+      "preview_sha256": "cc03d7c6785844a06330b22627e3f708537e51133425c5f084183f4986c6e409"
     },
     "WrcgPtES2": {
       "id": "favio_pt_es2",

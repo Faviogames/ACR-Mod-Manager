@@ -106,6 +106,8 @@ def from_official_database(manager,folder,toc,track,entry,database,identity,outp
               penalty_seconds=definition['penalty_seconds'],built_with=definition['built_with'],
               compatible_schemas=definition['compatible_schemas'],
               compatibility_scope=definition.get('compatibility_scope','full'),catalog_origin='bundled-official-database')
+    if definition.get('definition_revision'):data['definition_revision']=definition['definition_revision']
+    data['presentation_policy']=2
     if entry.get('preview'):
         import base64,hashlib
         raw=(ROOT/entry['preview']).read_bytes()
@@ -158,7 +160,10 @@ def cached_record(manager, folder, toc, identity):
         return False
     # Reject cache from another game schema; never silently bless old geometry.
     try:
-        manager.load_manifest(path,identity,files_root=folder)
+        data=manager.load_manifest(path,identity,files_root=folder)
+        revisions=read(ROOT/'official_presentation.json',{}).get('revisions',{})
+        if data.get('producer')=='StageExporter' and revisions.get(data.get('track')) and (data.get('definition_revision')!=revisions[data['track']] or data.get('presentation_policy')!=2):
+            return False
         return True
     except ValueError as exc:
         if str(exc).startswith(('SHA256 incorrecto:', 'Archivo ausente o tamaño incorrecto:')):
